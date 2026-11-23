@@ -1,0 +1,1501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{box-sizing:border-box}body{margin:0;padding:0}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Vaylo – Physical AI water leak protection for homes and buildings</title>
+<meta name="description" content="Vaylo is physical AI for homes and buildings: smart water leak detection and automatic shutoff that senses water, humidity and temperature, learns what normal looks like in every room, and acts locally in seconds. Works with Alexa, Google Home, Apple Home and Matter.">
+<meta name="keywords" content="physical AI, physical AI for homes, physical AI smart building, smart water shutoff valve, water leak detector, leak detection AI, smart home water protection, multifamily leak detection, Matter water sensor, humidity sensor, Florida mold prevention">
+<meta property="og:title" content="Vaylo – Physical AI for homes and buildings">
+<meta property="og:description" content="The leak alarm that thinks before it shouts. Physical AI that senses, learns and acts to keep water where it belongs.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Vaylo","category":"Physical AI water leak protection","description":"Physical AI for homes and buildings. Senses water, humidity and temperature, learns normal patterns room by room, and shuts off water locally when needed.","brand":{"@type":"Brand","name":"Vaylo"},"manufacturer":{"@type":"Organization","name":"Gorilla Forge"},"keywords":"physical AI, smart water shutoff, leak detection, smart building, Matter"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: warm photographic storytelling — real moments first, product second. Off-white, deep navy, sand. Visual tiles, short words. */
+:root{
+  --ground:#FAF8F4;    /* warm white */
+  --ground-2:#F3EEE6;  /* soft sand */
+  --surface:#FFFFFF;
+  --ink:#13263A;       /* deep navy */
+  --ink-2:#4E6273;     /* slate */
+  --muted:#8A949B;
+  --line:rgba(17,32,43,.12);
+  --sand:#CDB9A6;
+  --sand-deep:#B08D57;  /* brushed gold */
+  --sand-soft:#F7F2EA;
+  --blue:#2A73C9;      /* water blue, the only cool accent */
+  --sky:#E3ECF8;
+  --dry:#2F8A62; --amber:#D9961A; --shut:#C9472F;
+  --screen:#0E1A24; --screen-2:#16263A; --screen-muted:#93A1B3;
+  --shadow:0 34px 70px -36px rgba(17,32,43,.5);
+  --f-display:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif;
+  --f-logo:"Josefin Sans","Futura","Century Gothic",sans-serif;
+  --f-body:"Inter","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ground:#0E161D;--ground-2:#15212B;--surface:#1A2833;--ink:#F1EEE8;--ink-2:#AEBBC6;--muted:#7E8C97;--line:rgba(241,238,232,.12);
+  --sand:#D8C5B2;--sand-deep:#CDB9A6;--sand-soft:#1C2730;--blue:#7FA8F0;--sky:#1C2F48;--dry:#5CC292;--amber:#F0B547;--shut:#EB7457;
+  --shadow:0 34px 70px -36px rgba(0,0,0,.85);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ground:#0E161D;--ground-2:#15212B;--surface:#1A2833;--ink:#F1EEE8;--ink-2:#AEBBC6;--muted:#7E8C97;--line:rgba(241,238,232,.12);
+  --sand:#D8C5B2;--sand-deep:#CDB9A6;--sand-soft:#1C2730;--blue:#7FA8F0;--sky:#1C2F48;--dry:#5CC292;--amber:#F0B547;--shut:#EB7457;
+  --shadow:0 34px 70px -36px rgba(0,0,0,.85);color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ground)}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);letter-spacing:-.03em;line-height:1.05;text-wrap:balance;margin:0;font-weight:700}
+h1{font-size:clamp(2.6rem,5.8vw,4.8rem);font-weight:800}
+h2{font-size:clamp(2rem,4vw,3.2rem)}
+h3{font-size:1.25rem;letter-spacing:-.015em}
+p{margin:0}
+.kicker{font:600 .74rem var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--sand-deep)}
+.sub{font-size:1.15rem;color:var(--ink-2);max-width:46ch}
+section{padding-block:clamp(64px,9vw,120px)}
+
+/* nav */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ground) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+header.top .wrap{display:flex;align-items:center;gap:28px;padding-block:14px}
+.brand{text-decoration:none;display:grid;line-height:1}
+.brand b{display:flex;align-items:flex-start;gap:2px}
+.vl{height:1em;width:auto;display:block;color:currentColor}
+.brand .vl{height:30px}
+.brand sup{font:600 .6rem var(--f-body);margin-top:-2px}
+.app-top .vl{height:17px}
+.a-top .vl{height:21px}
+.fbrand{display:inline-flex;align-items:center;gap:6px}.fbrand .vl{height:18px;color:var(--ink)}
+.brand b sup{font-size:.4em;font-weight:600;letter-spacing:0;margin-left:2px}
+.brand small{font:500 .52rem var(--f-body);letter-spacing:.42em;text-transform:uppercase;color:var(--ink-2);margin-top:3px}
+nav.links{display:flex;gap:26px;margin-left:auto;font-weight:500;font-size:.94rem}
+nav.links a{text-decoration:none;color:var(--ink-2)}nav.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 .82rem/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;padding:17px 26px;border-radius:999px;border:0;background:var(--blue);color:#fff;box-shadow:0 12px 26px -14px color-mix(in srgb,var(--blue) 80%,transparent);text-decoration:none;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.btn.light{background:#fff;color:#11202B}
+.btn.sm{padding:12px 18px;font-size:.74rem}
+@media (max-width:860px){nav.links{display:none}header.top .btn{margin-left:auto}}
+
+/* hero — full-bleed photo */
+.hero{position:relative;padding:0;min-height:min(86vh,760px);display:grid;align-items:end;overflow:hidden;color:#fff}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,32,43,.78) 0%,rgba(17,32,43,.45) 38%,rgba(17,32,43,0) 65%),linear-gradient(0deg,rgba(17,32,43,.5),transparent 40%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-block:clamp(48px,8vw,96px)}
+.hero h1{max-width:12ch}
+.hero .sub{color:rgba(255,255,255,.86);margin-top:20px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.toast{position:absolute;right:max(16px,5vw);top:clamp(24px,6vw,72px);z-index:1;width:min(320px,80vw);background:rgba(255,255,255,.88);color:#11202B;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:20px;padding:14px 16px;display:grid;grid-template-columns:36px 1fr;gap:12px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.toast i{width:36px;height:36px;border-radius:10px;background:#11202B;color:#fff;display:grid;place-items:center;font:800 1rem var(--f-display);font-style:normal}
+.toast b{font:700 .92rem var(--f-display);display:block}
+.toast span{font-size:.84rem;color:#4F6475}
+.toast small{font-size:.72rem;color:#8A949B;float:right}
+@media (max-width:700px){.toast{display:none}.hero::after{background:linear-gradient(0deg,rgba(17,32,43,.85) 0%,rgba(17,32,43,.35) 70%,rgba(17,32,43,.15))}}
+
+/* icon strip */
+.strip{padding-block:28px;border-bottom:1px solid var(--line)}
+.strip .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.strip div{display:grid;justify-items:center;text-align:center;gap:8px;font-size:.9rem;color:var(--ink-2);line-height:1.3}
+.strip svg{width:30px;height:30px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:760px){.strip .wrap{display:flex;overflow-x:auto;gap:28px;scrollbar-width:none}.strip .wrap::-webkit-scrollbar{display:none}.strip .wrap>div{flex:0 0 auto}}
+
+/* life moments */
+.moments-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px}
+.moments{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,24px);margin-top:40px}
+.moments>*{min-width:0}
+@media (max-width:900px){.moments{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:6px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));scrollbar-width:none}.moments::-webkit-scrollbar{display:none}.moment{flex:0 0 78%;scroll-snap-align:center}}
+.moment{margin:0;display:grid;gap:14px;align-content:start}
+.mimg{overflow:hidden;aspect-ratio:4/5}
+.mimg img{width:100%;height:100%;object-fit:cover;display:block}
+.moment figcaption{display:grid;gap:4px}
+.moment b{font:700 1.35rem var(--f-display);letter-spacing:-.025em;line-height:1.15}
+.moment figcaption>span:last-child{color:var(--ink-2)}
+.moment .when{font:600 .7rem var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--sand-deep)}
+
+/* ladder */
+.ladder-sec{background:var(--ground-2)}
+.ladder{display:grid;grid-template-columns:1fr auto;gap:clamp(32px,6vw,80px);align-items:center;margin-top:48px}
+.ladder>*{min-width:0}
+@media (max-width:900px){.ladder{grid-template-columns:1fr}.ladder .phone{margin-inline:auto}}
+.track{list-style:none;margin:0;padding:0;display:grid;gap:4px;position:relative}
+.track::before{content:"";position:absolute;left:29px;top:30px;bottom:30px;width:2px;background:linear-gradient(var(--blue),var(--amber),var(--shut));opacity:.6}
+.track button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:60px 1fr;gap:18px;align-items:center;padding:12px 0;cursor:pointer;border-radius:18px;width:100%}
+.track button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.ic{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);transition:transform .25s,background .25s;position:relative;z-index:1}
+.ic svg{width:26px;height:26px;stroke:var(--ink-2);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.track b{font:700 1.3rem var(--f-display);letter-spacing:-.02em;display:block}
+.track span{color:var(--ink-2)}
+.track button[aria-pressed="true"] .ic{transform:scale(1.08);box-shadow:none}
+.track button[aria-pressed="true"] .ic svg{stroke:#fff}
+.track li:nth-child(1) button[aria-pressed="true"] .ic{background:var(--blue)}
+.track li:nth-child(2) button[aria-pressed="true"] .ic{background:var(--amber)}
+.track li:nth-child(3) button[aria-pressed="true"] .ic{background:var(--shut)}
+.track li:nth-child(4) button[aria-pressed="true"] .ic{background:#B23A26}
+.track li:nth-child(5) button[aria-pressed="true"] .ic{background:var(--dry)}
+.track button{position:relative}
+.prog{position:absolute;left:78px;right:0;bottom:2px;height:2px;background:var(--line);border-radius:2px;overflow:hidden;opacity:0}
+.prog::after{content:"";position:absolute;inset:0;background:var(--sand-deep);transform:scaleX(0);transform-origin:left}
+.track button[aria-pressed="true"] .prog{opacity:1}
+.track.auto button[aria-pressed="true"] .prog::after{animation:prog var(--dur,4.2s) linear forwards}
+@keyframes prog{to{transform:scaleX(1)}}
+.cu-wrap{position:relative;flex:0 0 auto;width:clamp(96px,14vw,170px);margin-bottom:8%}
+.cu-wrap .ladder-cu{width:100%;margin:0}
+.waves{position:absolute;inset:-22%;pointer-events:none;opacity:0}
+.waves i{position:absolute;inset:0;border-radius:50%;border:2px solid #D24A33;opacity:0}
+.alarm .waves{opacity:1}
+.alarm .waves i{animation:wave 1.4s ease-out infinite}
+.alarm .waves i:nth-child(2){animation-delay:.45s}.alarm .waves i:nth-child(3){animation-delay:.9s}
+@keyframes wave{0%{transform:scale(.55);opacity:.8}100%{transform:scale(1.15);opacity:0}}
+.alarm .ladder-cu{animation:flash .7s steps(2) infinite}
+@keyframes flash{50%{opacity:.82}}
+@media (prefers-reduced-motion:reduce){.alarm .waves i,.alarm .ladder-cu{animation:none}.alarm .waves i{opacity:.5;transform:scale(.62)}.alarm .waves i:nth-child(2){opacity:.32;transform:scale(.8)}.alarm .waves i:nth-child(3){opacity:.18;transform:scale(.98)}}
+.learn{margin-top:22px;display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--dry)}
+.hint2{margin-top:8px;font-size:.84rem;color:var(--muted)}
+.learn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* phone */
+.phone{width:min(290px,76vw);aspect-ratio:9/18.6;border-radius:46px;background:linear-gradient(145deg,#F4F1EC,#DED7CC);box-shadow:inset 0 0 0 1px #D2C9BC,0 34px 70px -36px rgba(17,32,43,.45);padding:11px;box-shadow:var(--shadow);position:relative}
+.phone::before{content:"";position:absolute;top:19px;left:50%;transform:translateX(-50%);width:86px;height:24px;border-radius:12px;background:#000;z-index:2}
+.phone .scr{height:100%;border-radius:36px;overflow:hidden;background:#F7F6F3;color:#11202B;padding:56px 14px 14px;display:grid;align-content:start;gap:10px}
+.app-h{display:flex;justify-content:space-between;align-items:center;font:800 1.3rem var(--f-display);letter-spacing:-.04em}
+.app-h svg{width:20px;height:20px;stroke:#11202B;fill:none;stroke-width:1.8}
+.status{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;padding:12px;border-radius:16px;background:#fff;box-shadow:0 4px 14px -8px rgba(17,32,43,.25)}
+.status i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center}
+.status i svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.status b{font:700 .9rem var(--f-display);display:block}
+.status span{font-size:.74rem;color:#4F6475}
+.msg{padding:12px;border-radius:16px;background:#fff;display:grid;gap:6px;box-shadow:0 4px 14px -8px rgba(17,32,43,.25)}
+.msg .t{font-size:.7rem;color:#8A949B}
+.msg b{font:700 .9rem var(--f-display)}
+.msg p{font-size:.82rem;color:#4F6475;line-height:1.35}
+.msg .acts{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px}
+.msg .acts span{text-align:center;font-size:.76rem;font-weight:600;padding:9px;border-radius:10px;background:#F3EEE6}
+.msg .acts span.dk{background:#11202B;color:#fff}
+.msg .acts span.red{background:#C9472F;color:#fff}
+.zl{display:grid;gap:6px}
+.zl div{display:flex;justify-content:space-between;padding:10px 12px;border-radius:12px;background:#fff;font-size:.8rem}
+.zl div span:last-child{color:#2F8A62;font-weight:600}
+.zl div.w span:last-child{color:#2E6FD8}
+
+/* talks */
+#talks{background:linear-gradient(180deg,var(--ground) 0%,var(--sand-soft) 100%)}
+.talks{max-width:900px}
+.brands{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:40px;padding-block:26px;border-block:1px solid var(--line)}
+.brands span{font:700 clamp(1.1rem,2vw,1.45rem) var(--f-display);letter-spacing:-.03em;color:var(--ink-2)}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.langs span{display:inline-flex;align-items:center;gap:10px;padding:9px 14px 9px 9px;border-radius:999px;background:var(--surface);font-size:.88rem;box-shadow:0 8px 20px -14px rgba(17,32,43,.4)}
+.langs b{font:700 .68rem var(--f-body);letter-spacing:.08em;padding:4px 8px;border-radius:999px;background:var(--ink);color:var(--ground)}
+
+/* mold */
+#mold{background:var(--ground-2)}
+.mold{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.mold>*{min-width:0}
+@media (max-width:900px){.mold{grid-template-columns:1fr}}
+.ai3.two{grid-template-columns:1fr;gap:18px}
+.rh{padding:clamp(24px,3vw,36px);background:color-mix(in srgb,var(--surface) 70%,var(--sand-soft));box-shadow:0 30px 60px -40px rgba(17,32,43,.35)}
+.rh-now{display:flex;align-items:baseline;gap:14px;margin-top:10px}
+.rh-now b{font:800 clamp(3.6rem,8vw,5.6rem)/1 var(--f-display);letter-spacing:-.05em}
+.rh-now span{font-weight:500;color:var(--ink-2)}
+.rh-now span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-right:8px;vertical-align:1px}
+.scale{position:relative;margin-top:30px;height:6px;border-radius:6px;background:linear-gradient(90deg,#9DBBDD 0%,#9DBBDD 28%,#E3D3B8 43%,#C9A26A 57%,#A8603F 100%)}
+.scale em{position:absolute;top:50%;width:18px;height:18px;margin-left:-9px;transform:translateY(-50%);border-radius:50%;background:var(--ink);box-shadow:0 0 0 4px color-mix(in srgb,var(--surface) 70%,var(--sand-soft))}
+.scale-n{position:relative;height:20px;margin-top:10px;font-size:.74rem;color:var(--muted)}
+.scale-n span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.rh-log{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.rh-log li{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.9rem;color:var(--ink-2)}
+.rh-log li span{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* everyone */
+.ease{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px);margin-top:40px}
+@media (max-width:900px){.ease{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ease{grid-template-columns:1fr}}
+.ease div{display:grid;gap:8px;align-content:start}
+.ease svg{width:34px;height:34px;stroke:var(--sand-deep);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ease b{font:700 1.15rem var(--f-display)}
+.ease span{color:var(--ink-2)}
+
+.sos{grid-template-columns:1fr auto}
+@media (max-width:900px){.sos{grid-template-columns:1fr}}
+.sosbtn{justify-self:center;width:150px;height:150px;border-radius:50%;margin:8px 0;display:grid;place-content:center;text-align:center;background:#D24A33;color:#fff;font:800 1.5rem/1 var(--f-display);letter-spacing:-.02em;box-shadow:0 0 0 12px rgba(210,74,51,.14),0 0 0 26px rgba(210,74,51,.06)}
+.sosbtn small{font:600 .68rem var(--f-body);letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-top:6px}
+.w-photo{height:86px;border-radius:12px;background:linear-gradient(160deg,#D9CFC1,#B9AC9A);position:relative;overflow:hidden}
+.w-photo::after{content:"";position:absolute;left:30%;top:0;width:34%;height:70%;background:radial-gradient(ellipse at 50% 0,rgba(90,70,50,.45),transparent 70%)}
+.w-photo span{position:absolute;right:8px;bottom:8px;font-size:.66rem;font-weight:600;color:#fff;background:rgba(19,38,58,.6);padding:3px 8px;border-radius:999px}
+.why{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,6vw,80px);align-items:center;margin-top:clamp(56px,8vw,100px);padding-top:clamp(40px,6vw,64px);border-top:1px solid var(--line)}
+.why>*{min-width:0}
+@media (max-width:900px){.why{grid-template-columns:1fr}.why .phone{margin-inline:auto;order:2}}
+.whyreasons,.whyscope{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.whyreasons span{padding:9px 14px;border-radius:999px;background:var(--surface);font-size:.88rem;font-weight:500;box-shadow:0 8px 18px -14px rgba(19,38,58,.45)}
+.whyscope{margin-top:14px}
+.whyscope span{padding:7px 12px;border-radius:999px;font-size:.8rem;font-weight:600;color:var(--sand-deep);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--sand-deep) 45%,transparent)}
+.w-card{padding:14px;border-radius:16px;background:#fff;display:grid;gap:8px;box-shadow:0 6px 18px -12px rgba(19,38,58,.35)}
+.w-card .t{font-size:.68rem;color:#9A9083}
+.w-card b{font:700 .95rem var(--f-display);color:#13263A}
+.w-card p{font-size:.8rem;color:#4E6273;line-height:1.35}
+.w-count{display:flex;align-items:center;gap:8px;font-size:.74rem;font-weight:600;color:#B23A26}
+.w-count i{flex:1;height:4px;border-radius:4px;background:#F3DDD8;overflow:hidden;position:relative}
+.w-count i::after{content:"";position:absolute;inset:0;width:62%;background:#D24A33;border-radius:4px}
+.w-chips{display:flex;flex-wrap:wrap;gap:6px}
+.w-chips span{font-size:.72rem;font-weight:600;padding:7px 10px;border-radius:999px;background:#F3EEE6;color:#13263A}
+.w-chips span.on{background:#13263A;color:#fff}
+.w-chips.sc span{background:transparent;box-shadow:inset 0 0 0 1.5px #E2DBD0}
+.w-chips.sc span.on{background:#B08D57;color:#fff;box-shadow:none}
+.w-btn{text-align:center;font-size:.8rem;font-weight:600;padding:11px;border-radius:999px;background:#13263A;color:#fff}
+.w-btn.ghost{background:#fff;color:#13263A;box-shadow:inset 0 0 0 1.5px #E2DBD0}
+.w-ok{display:grid;justify-items:center;gap:10px;text-align:center;padding:10px 0}
+.w-ok i{width:54px;height:54px;border-radius:50%;background:#2F9A6A;display:grid;place-items:center}
+.w-ok i svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.w-fade{animation:wfade .45s ease both}@keyframes wfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.acday{margin-top:24px;display:grid;gap:10px}
+.acrow{display:grid;grid-template-columns:96px 1fr 40px;gap:10px;align-items:center;font-size:.82rem;color:var(--ink-2)}
+.acrow b{font:700 .9rem var(--f-display);color:var(--ink);text-align:right;font-variant-numeric:tabular-nums}
+.hrs{display:grid;grid-template-columns:repeat(24,1fr);gap:2px;height:14px}
+.hrs i{border-radius:2px;background:color-mix(in srgb,var(--ink) 8%,transparent)}
+.hrs i.on{background:color-mix(in srgb,var(--shut) 55%,var(--sand))}
+.hrs i.on2{background:var(--blue)}
+.hrs-n{display:flex;justify-content:space-between;margin-left:106px;margin-right:50px;font-size:.68rem;color:var(--muted)}
+@media (max-width:520px){.acrow{grid-template-columns:70px 1fr 34px}.hrs-n{margin-left:80px;margin-right:44px}}
+
+.w-vid{position:relative;height:120px;border-radius:12px;overflow:hidden}
+.w-vid svg{width:100%;height:100%;display:block}
+.w-vid .rec{position:absolute;left:8px;top:8px;display:inline-flex;align-items:center;gap:5px;font-size:.66rem;font-weight:600;color:#fff;background:rgba(19,38,58,.6);padding:3px 8px;border-radius:999px;font-variant-numeric:tabular-nums}
+.w-vid .rec i{width:6px;height:6px;border-radius:50%;background:#E5533B;animation:live 1.2s infinite}
+.w-vid .opt{position:absolute;right:8px;bottom:8px;font-size:.66rem;font-weight:600;color:#fff;background:rgba(19,38,58,.6);padding:3px 8px;border-radius:999px}
+.v-drop{opacity:0}
+@media (prefers-reduced-motion:no-preference){
+  .v-stain{transform-box:fill-box;transform-origin:50% 0;animation:stain 4s ease-out infinite}
+  @keyframes stain{0%{transform:scale(.6)}100%{transform:scale(1.05)}}
+  .v-drop{animation:fall 1.3s cubic-bezier(.5,0,1,1) infinite}
+  .v-drop.d2{animation-delay:.45s}.v-drop.d3{animation-delay:.9s}
+  @keyframes fall{0%{transform:translateY(4px) scale(.6);opacity:0}10%{opacity:1;transform:translateY(8px) scale(1)}90%{opacity:1}100%{transform:translateY(92px);opacity:0}}
+  .v-rip{transform-box:fill-box;transform-origin:center;animation:rip 1.3s ease-out infinite;opacity:0}
+  .v-rip.r2{animation-delay:.65s}
+  @keyframes rip{0%{transform:scale(.3);opacity:.9}100%{transform:scale(3.2);opacity:0}}
+}
+@media (prefers-reduced-motion:reduce){.v-drop.d1{opacity:1;transform:translateY(40px)}}
+
+/* ai */
+.aiwrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.aiwrap>*{min-width:0}
+@media (max-width:900px){.aiwrap{grid-template-columns:1fr}}
+.aiwrap .ai3{grid-template-columns:1fr;gap:16px}
+.sig-head{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--muted)}
+.live{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ink)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 0 color-mix(in srgb,var(--blue) 50%,transparent);animation:live 1.8s infinite}
+@keyframes live{70%{box-shadow:0 0 0 8px transparent}}
+.sig-plot{position:relative;margin-top:14px;aspect-ratio:600/220}
+.sig-plot svg{width:100%;height:100%;display:block;overflow:visible}
+.sig-line{stroke-dasharray:1000;stroke-dashoffset:0}
+.sig-leak{stroke-dasharray:1000;stroke-dashoffset:0}
+.stag{position:absolute;transform:translate(-50%,-100%);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:6px 11px;border-radius:999px;background:var(--surface);font-size:.76rem;font-weight:600;color:var(--ink);box-shadow:0 10px 22px -12px rgba(19,38,58,.4)}
+.stag i{width:7px;height:7px;border-radius:50%;background:var(--dry)}
+.stag.bad{background:#13263A;color:#fff;box-shadow:0 0 0 1.5px rgba(255,255,255,.18),0 10px 22px -12px rgba(0,0,0,.5)}.stag.bad i{background:var(--shut)}
+.sig-days{display:flex;justify-content:space-between;padding:8px 3% 0;font-size:.74rem;color:var(--muted)}
+.sig-foot{margin-top:16px;color:var(--ink-2);font-size:.92rem}
+.sig-foot b{font:800 1.4rem var(--f-display);color:var(--sand-deep);margin-right:4px}
+@media (max-width:600px){.stag{font-size:.66rem;padding:5px 8px}}
+@media (prefers-reduced-motion:no-preference){
+  .sig-line{animation:sigdraw 9s ease-in-out infinite}
+  @keyframes sigdraw{0%{stroke-dashoffset:1000}55%,92%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
+  .sig-leak{animation:sigleak 9s ease-in-out infinite}
+  @keyframes sigleak{0%,45%{stroke-dashoffset:1000}58%,92%{stroke-dashoffset:0}100%{opacity:0}}
+  .t1{animation:tg1 9s infinite}.t2{animation:tg2 9s infinite}.t3{animation:tg3 9s infinite}.t4{animation:tg4 9s infinite}
+  @keyframes tg1{0%,12%{opacity:0;transform:translate(-50%,-80%)}17%,92%{opacity:1;transform:translate(-50%,-100%)}100%{opacity:0}}
+  @keyframes tg2{0%,24%{opacity:0;transform:translate(-50%,-80%)}29%,92%{opacity:1;transform:translate(-50%,-100%)}100%{opacity:0}}
+  @keyframes tg3{0%,34%{opacity:0;transform:translate(-50%,-80%)}39%,92%{opacity:1;transform:translate(-50%,-100%)}100%{opacity:0}}
+  @keyframes tg4{0%,56%{opacity:0;transform:translate(-50%,-80%) scale(.9)}61%{opacity:1;transform:translate(-50%,-100%) scale(1.08)}64%,92%{opacity:1;transform:translate(-50%,-100%) scale(1)}100%{opacity:0}}
+}
+.ai3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,48px);margin-top:36px}
+@media (max-width:760px){.ai3{grid-template-columns:1fr}}
+.ai3 p{color:var(--ink-2);padding-top:16px;border-top:2px solid var(--sand-deep)}
+.ai3 b{display:block;font:700 1.15rem var(--f-display);color:var(--ink);margin-bottom:4px}
+
+/* living hero + app v2 */
+.toast{transition:opacity .45s ease,transform .45s ease}
+.toast.out{opacity:0;transform:translateY(-8px)}
+.toast i{background:#fff!important;border:3px solid var(--rc);box-shadow:0 0 12px var(--rc),inset 0 0 8px color-mix(in srgb,var(--rc) 40%,transparent);border-radius:50%!important;width:30px!important;height:30px!important;margin:3px;transition:border-color .4s,box-shadow .4s}
+.scr2{background:#FAF8F4!important;padding:58px 18px 18px!important;gap:14px!important;align-content:start}
+.a-top{display:flex;justify-content:space-between;align-items:baseline}
+.a-top b{font:700 1.4rem var(--f-logo);letter-spacing:-.03em;color:#11202B}
+.a-top span{font-size:.75rem;color:#8A949B;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.ring{justify-self:center;width:150px;height:150px;border-radius:50%;margin:10px 0 4px;display:grid;place-items:center;background:#fff;border:6px solid var(--rc);box-shadow:0 0 0 10px color-mix(in srgb,var(--rc) 12%,transparent),0 0 34px color-mix(in srgb,var(--rc) 45%,transparent);transition:all .45s}
+.ring span{font:700 1.05rem var(--f-display);color:#11202B;letter-spacing:-.02em}
+.ring.pulse{animation:rp 1.6s ease-in-out infinite}
+@keyframes rp{50%{box-shadow:0 0 0 18px color-mix(in srgb,var(--rc) 6%,transparent),0 0 46px color-mix(in srgb,var(--rc) 60%,transparent)}}
+.a-msg{text-align:center}
+.a-msg b{font:700 1.02rem var(--f-display);color:#11202B;display:block;letter-spacing:-.02em}
+.a-msg p{font-size:.82rem;color:#4F6475;margin-top:4px;line-height:1.4}
+.a-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.a-acts span{text-align:center;font-size:.8rem;font-weight:600;padding:12px 8px;border-radius:999px}
+.a-acts .pri{background:#11202B;color:#fff}.a-acts .off{background:#fff;color:#C9472F;box-shadow:inset 0 0 0 1.5px #E9CFC8}
+.a-acts .wide{grid-column:1/-1}
+.rooms2{display:grid;gap:0;margin-top:4px;border-top:1px solid rgba(17,32,43,.08)}
+.rooms2 div{display:grid;grid-template-columns:10px 1fr auto;gap:10px;align-items:center;padding:9px 2px;border-bottom:1px solid rgba(17,32,43,.08);font-size:.8rem;color:#11202B}
+.rooms2 i{width:7px;height:7px;border-radius:50%}
+.rooms2 em{font-style:normal;color:#8A949B}
+.ladder-vis{display:flex;align-items:flex-end;justify-content:flex-end;gap:clamp(14px,3vw,32px)}
+.ladder-cu{transition:filter .5s}
+@media (max-width:900px){.ladder-vis{justify-content:center}}
+@media (prefers-reduced-motion:no-preference){.hero>img{animation:drift 28s ease-in-out infinite alternate}@keyframes drift{from{transform:scale(1.03) translate(0,0)}to{transform:scale(1.1) translate(-1.6%,-1.2%)}}}
+/* product stage composition */
+.stage{position:relative;aspect-ratio:16/11;padding:0!important}
+.stage img{position:absolute;max-width:none;filter:drop-shadow(0 30px 28px rgba(17,32,43,.22))}
+.stage .s-valve{right:2%;top:0;width:44%}
+.stage .s-cu{left:4%;top:6%;width:30%}
+.stage .s-cable{right:4%;bottom:10%;width:24%}
+.stage .s-combo{left:20%;bottom:6%;width:26%}
+.stage .s-spot{left:49%;bottom:4%;width:19%}
+.shadowfloor{bottom:2%!important}
+.piece img{width:84px!important;height:72px!important}
+.pieces{gap:16px!important}
+/* install */
+.isteps{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,2vw,24px)}
+@media (max-width:1000px){.isteps{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.isteps{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));scrollbar-width:none}.isteps::-webkit-scrollbar{display:none}.isteps li{flex:0 0 80%;scroll-snap-align:center}}
+.isteps li{display:grid;gap:8px;align-content:start}
+.ill{aspect-ratio:3/2;display:grid;place-items:center}
+.ill svg *{transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:no-preference){
+  .a-drop{animation:drop 3.2s cubic-bezier(.3,1.4,.5,1) infinite}
+  @keyframes drop{0%,12%{transform:translateY(-34px);opacity:0}30%{transform:translateY(0);opacity:1}80%{transform:none;opacity:1}100%{transform:none;opacity:0}}
+  .a-dash{animation:dash 3.2s infinite}@keyframes dash{0%,25%{opacity:1}35%,100%{opacity:0}}
+  .a-bob{animation:bob 1.6s ease-in-out infinite}@keyframes bob{50%{transform:translateY(6px)}}
+  .a-plug{animation:plug 3s cubic-bezier(.3,1.3,.5,1) infinite}@keyframes plug{0%,10%{transform:translateX(-22px)}35%,85%{transform:none}100%{transform:translateX(-22px)}}
+  .a-spark{animation:spark 3s infinite}@keyframes spark{0%,33%{opacity:0;transform:scale(.6)}40%{opacity:1;transform:scale(1.1)}55%,100%{opacity:0}}
+  .a-glow{animation:glow 3s infinite}@keyframes glow{0%,35%{stroke-opacity:.3}45%,85%{stroke-opacity:1}}
+  .a-scan{animation:scan 2.4s ease-in-out infinite}@keyframes scan{0%,100%{transform:translateY(0)}50%{transform:translateY(34px)}}
+  .a-ping{animation:ping 2.4s ease-out infinite}@keyframes ping{0%,40%{opacity:0;transform:scale(.4)}55%{opacity:1}100%{opacity:0;transform:scale(3)}}
+  .a-pop{animation:pop 3.6s cubic-bezier(.3,1.6,.5,1) infinite}
+  .p1{animation-delay:0s}.p2{animation-delay:.35s}.p3{animation-delay:.7s}.p4{animation-delay:1.1s}
+  @keyframes pop{0%{transform:scale(0);opacity:0}15%{transform:scale(1);opacity:1}80%{transform:scale(1);opacity:1}92%,100%{transform:scale(0);opacity:0}}
+  .a-doc{animation:doc 3.6s ease-out infinite}@keyframes doc{0%{transform:translateY(16px);opacity:0}15%,88%{transform:none;opacity:1}100%{opacity:0}}
+  .a-line{stroke-dasharray:60;animation:line 3.6s ease-out infinite}.l2{animation-delay:.15s}.l3{animation-delay:.3s}@keyframes line{0%,10%{stroke-dashoffset:60}30%,100%{stroke-dashoffset:0}}
+  .a-sign{stroke-dasharray:90;animation:sign 3.6s ease-in-out infinite}@keyframes sign{0%,25%{stroke-dashoffset:90}45%,100%{stroke-dashoffset:0}}
+}
+.ill svg{width:100%;height:100%}
+.sh{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.sn{font:800 1.6rem var(--f-display);letter-spacing:-.04em;color:var(--blue)}
+.tm{font:600 .72rem var(--f-body);padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--blue) 12%,transparent);color:var(--blue)}
+.isteps b{font:700 1.08rem var(--f-display);line-height:1.2}
+.isteps .sd{color:var(--ink-2);font-size:.92rem;line-height:1.4;display:block}
+.profacts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line)}
+@media (max-width:760px){.profacts{grid-template-columns:1fr 1fr}}
+.profacts span{display:grid;gap:2px;font-size:.9rem;color:var(--ink-2);line-height:1.35}
+.profacts b{font:700 1rem var(--f-display);color:var(--ink)}
+.diy{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;margin-top:clamp(56px,8vw,96px);padding-top:clamp(40px,6vw,64px);border-top:1px solid var(--line)}
+.diy>*{min-width:0}
+@media (max-width:900px){.diy{grid-template-columns:1fr}}
+.diy-art{position:relative;aspect-ratio:16/9}
+.diy-art img{position:absolute;filter:drop-shadow(0 24px 22px rgba(17,32,43,.2))}
+.book{display:inline-flex;align-items:center;gap:12px;margin-top:24px;padding:12px 18px 12px 12px;border-radius:999px;background:var(--surface);box-shadow:var(--shadow);font-weight:600;text-decoration:none}
+.book i{width:34px;height:34px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.book i svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* zones with photo */
+.zones{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:center}
+.zones>*{min-width:0}
+@media (max-width:900px){.zones{grid-template-columns:1fr}}
+.photo{overflow:hidden;aspect-ratio:4/3}
+.photo img{width:100%;height:100%;object-fit:cover}
+.moment img,.photo img,.bld-photo img{transform-origin:50% 60%}
+.rooms{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.rooms button{font:600 .9rem var(--f-body);padding:10px 16px;border-radius:999px;border:0;background:var(--surface);color:var(--ink-2);box-shadow:inset 0 0 0 1.5px var(--line);cursor:pointer}
+.rooms button[aria-pressed="true"]{background:var(--ink);color:var(--ground);box-shadow:none}
+.rule{margin-top:24px;min-height:150px}
+.rule p{font-size:1.15rem;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;color:var(--ink-2)}
+.chip i{width:10px;height:10px;border-radius:50%}
+.chip+.chip::before{content:"";width:18px;height:1px;background:var(--line);margin-right:2px}
+
+/* planner */
+.ptabs{display:flex;gap:28px;margin-top:34px;border-bottom:1px solid var(--line)}
+.ptabs button{font:600 1rem var(--f-body);padding:0 0 12px;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;background:none;color:var(--muted);cursor:pointer}
+.ptabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--sand-deep)}
+.planner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);margin-top:12px;align-items:start}
+.planner>*{min-width:0}
+@media (max-width:900px){.planner{grid-template-columns:1fr}}
+.pin .q{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:58px;border-bottom:1px solid var(--line)}
+.pin .q>span,.pin .q>label{font-weight:500;color:var(--ink)}
+.stp2{display:flex;align-items:center;gap:14px}
+.stp2 button{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);background:none;color:var(--ink);font:500 1.05rem var(--f-body);cursor:pointer;line-height:1}
+.stp2 button:hover{border-color:var(--ink-2)}
+.stp2 .num{width:5.5ch;text-align:center;font:700 1.1rem var(--f-display);font-variant-numeric:tabular-nums;color:var(--ink);background:transparent;border:0;border-bottom:1.5px dashed var(--line);padding:4px 0;-moz-appearance:textfield;appearance:textfield}
+.stp2 .num::-webkit-outer-spin-button,.stp2 .num::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.stp2 .num:focus{outline:none;border-bottom-color:var(--sand-deep)}
+.sw{appearance:none;-webkit-appearance:none;width:46px;height:28px;border-radius:999px;background:var(--line);position:relative;cursor:pointer;transition:background .2s;flex:none;margin:0}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .2s}
+.sw:checked{background:var(--ink)}
+.sw:checked::after{transform:translateX(18px)}
+.pin select{appearance:none;-webkit-appearance:none;border:0;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23A88B6E' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right center/12px;padding:6px 22px 6px 6px;font:600 1rem var(--f-body);color:var(--ink);text-align:right;cursor:pointer}
+.pin select option{color:#11202B}
+.pin .txt{border:0;background:none;font:600 1rem var(--f-body);color:var(--ink);text-align:right;padding:6px 0;min-width:0;width:60%}
+.pin .txt:focus,.pin select:focus{outline:none;box-shadow:0 2px 0 var(--sand-deep)}
+.plabel{font:600 .7rem var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.pout{background:var(--surface);padding:clamp(22px,3vw,32px);box-shadow:var(--shadow);position:sticky;top:90px;margin-top:22px}
+@media (max-width:900px){.pout{position:static}}
+.pout-top{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.pout-top b{display:block;font:800 2rem var(--f-display);letter-spacing:-.03em;margin-top:6px}
+.tot{text-align:right}
+.risk.low{color:var(--dry)}.risk.med{color:var(--amber)}.risk.high{color:var(--shut)}
+.meter{height:4px;background:var(--ground-2);margin-top:14px;overflow:hidden}
+.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--dry),var(--amber),var(--shut));transition:width .35s}
+.counts{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:18px;font-size:.88rem;font-weight:600;color:var(--ink-2)}
+.places{list-style:none;margin:16px 0 0;padding:0;max-height:300px;overflow:auto;border-top:1px solid var(--line)}
+.places li{display:grid;grid-template-columns:12px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.places li i{width:8px;height:8px;border-radius:50%}
+.places li span:last-child{font-size:.78rem;color:var(--muted);text-align:right}
+.pnote{margin-top:14px;font-size:.84rem;color:var(--ink-2);min-height:1.2em}
+.pacts{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.btn.ghostd{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.pmsg{margin-top:10px;font-size:.84rem;font-weight:600;color:var(--dry);min-height:1.2em}
+
+.sens{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.sens>span{font:600 .7rem var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+.sens button{font:600 .86rem var(--f-body);padding:8px 14px;border-radius:999px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;box-shadow:inset 0 0 0 1.5px var(--line)}
+.sens button[aria-pressed="true"]{background:var(--sand-deep);color:#fff;box-shadow:none}
+
+.who2{display:flex;justify-content:center;gap:28px;margin-top:2px}
+.who2 div{display:grid;justify-items:center;gap:6px;text-align:center}
+.who2 .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:700 .74rem var(--f-display);font-style:normal;background:#fff;color:#11202B;box-shadow:0 0 0 2px #E2A11B}
+.who2 .av.sam{background:#CDB9A6;color:#11202B;box-shadow:0 0 0 2px #2F9A6A;position:relative}
+.who2 .av.sam::after,.who2 .av.spk::after{content:"✓";position:absolute;right:-4px;bottom:-4px;width:18px;height:18px;border-radius:50%;background:#2F9A6A;color:#fff;font-size:.62rem;display:grid;place-items:center}
+.who2 .av.spk{background:#11202B;box-shadow:0 0 0 2px #2F9A6A;position:relative}
+.who2 .av.spk svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.who2 em{font-style:normal;font-size:.66rem;color:#4F6475;line-height:1.25}
+
+.dev{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:12px;background:#F3EEE6;font-size:.74rem;color:#11202B;font-weight:600}
+.dev svg{width:18px;height:18px;stroke:#2A73C9;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.dev span{flex:1}
+.dev b{width:18px;height:18px;border-radius:50%;background:#2F9A6A;color:#fff;font-size:.62rem;display:grid;place-items:center}
+
+/* product */
+#system{background:radial-gradient(900px 520px at 32% 55%,color-mix(in srgb,var(--surface) 90%,transparent),transparent 72%),var(--ground)}
+.stage{position:relative;display:grid;place-items:center;padding:10px 0 46px}
+.stage img{width:100%;max-width:720px;filter:drop-shadow(0 44px 40px rgba(17,32,43,.22))}
+.shadowfloor{position:absolute;bottom:26px;left:10%;right:10%;height:36px;background:radial-gradient(ellipse at center,rgba(17,32,43,.25),transparent 70%);filter:blur(8px)}
+.product{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(28px,5vw,64px);align-items:center;margin-top:44px}
+.product>*{min-width:0}
+@media (max-width:900px){.product{grid-template-columns:1fr}}
+.pieces{display:grid;gap:22px}
+.piece{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center}
+.piece img{width:96px;height:96px;object-fit:contain;filter:drop-shadow(0 14px 14px rgba(17,32,43,.18))}
+.piece b{font:700 1.15rem var(--f-display);display:block}
+.piece span{color:var(--ink-2);font-size:.94rem}
+.specs{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.spec{display:inline-flex;align-items:center;gap:9px;font-weight:500;font-size:.92rem;color:var(--ink-2)}
+.spec svg{width:20px;height:20px;stroke:var(--ink);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* buildings */
+.bld{padding-block:clamp(64px,9vw,120px)}
+.bld-photo{position:relative;height:clamp(260px,36vw,460px);overflow:hidden;margin-top:40px}
+.bld-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.bld-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,var(--ground) 100%)}
+.laptop{margin:calc(-1 * clamp(140px,16vw,240px)) auto 0;max-width:980px;position:relative;z-index:1;box-shadow:var(--shadow)}
+.lid{background:linear-gradient(#EFEBE4,#E2DCD2);border-radius:20px 20px 0 0;padding:12px 12px 16px;box-shadow:inset 0 0 0 1px #D6CEC2}
+.lid .cam{width:6px;height:6px;border-radius:50%;background:#A99F91;margin:0 auto 9px}
+.base{height:16px;background:linear-gradient(#D5D9DF,#A9B0BA);border-radius:0 0 16px 16px;margin:0 -3%}
+.screen{background:#FFFFFF;color:#11202B;box-shadow:inset 0 0 0 1px #ECE5DA;border-radius:6px;overflow:hidden;font-size:.86rem}
+.app-top{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAF7F2;border-bottom:1px solid #EEE7DC;flex-wrap:wrap;color:#11202B}
+.app-top b{font:700 1.2rem var(--f-logo);letter-spacing:-.03em}
+.app-top .bn{font-weight:600}
+.app-top .kp{margin-left:auto;display:flex;gap:14px;flex-wrap:wrap;color:#7A7064;font-size:.78rem}
+.app-top .kp b{font:600 .85rem var(--f-body);color:#11202B;margin-right:3px;letter-spacing:0}
+.app{display:grid;grid-template-columns:1.4fr .8fr;height:400px}
+@media (max-width:760px){.app{height:auto}}
+.app>*{min-width:0}
+@media (max-width:760px){.app{grid-template-columns:1fr}}
+.floors{padding:16px;display:grid;gap:8px;overflow-x:auto;align-content:center}
+.floor{display:grid;grid-template-columns:40px repeat(8,minmax(38px,1fr));gap:5px;min-width:400px}
+.fl{font-size:.7rem;color:#9A9083;align-self:center}
+.unit{all:unset;box-sizing:border-box;height:44px;border-radius:8px;background:#EBF2E6;color:#4C7A55;font-size:.66rem;font-weight:600;display:grid;place-items:center;cursor:pointer}
+.unit.wetok{background:#E4EDF8;color:#2A73C9}
+.unit.ask{background:#FDF0D3;color:#A2700B}
+.unit.shut{background:#E2533B;color:#fff;box-shadow:0 0 0 3px rgba(226,83,59,.25)}
+.unit.off{background:transparent;color:#A99F91;box-shadow:inset 0 0 0 1px #E2DBD0}
+.unit[aria-pressed="true"]{outline:2px solid #11202B;outline-offset:1px}
+.feed{padding:16px;display:grid;gap:8px;align-content:start;overflow-y:auto;border-left:1px solid #EEE7DC}
+@media (max-width:760px){.feed{border-left:0;border-top:1px solid #EEE7DC}}
+.ev{padding:10px 12px;border-radius:10px;background:#F7F3ED;display:grid;gap:3px}
+.ev .t{font-size:.68rem;color:#9A9083}
+.ev b{font-size:.86rem}.ev span{font-size:.8rem;color:#5E6670}
+.ev.hot{background:#FDECE8}
+.back{all:unset;cursor:pointer;justify-self:start;font-size:.8rem;font-weight:600;color:#2A73C9;padding:6px 0}
+
+/* pros */
+.pros{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.pros>*{min-width:0}
+@media (max-width:900px){.pros{grid-template-columns:1fr}}
+.who{display:grid;gap:22px;margin-top:30px}
+.who>div{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.who svg{width:28px;height:28px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.who b{font:700 1.1rem var(--f-display);display:block}
+.who span{color:var(--ink-2)}
+
+/* quote band */
+.quote{padding:0;background:var(--sand-soft)}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:clamp(280px,32vw,420px)}
+@media (max-width:760px){.qgrid{grid-template-columns:1fr}}
+.qtext{display:grid;align-items:center;padding-block:56px;width:100%;max-width:600px;margin-left:auto;margin-right:0}
+.qimg{overflow:hidden;min-height:260px}
+.qimg img{width:100%;height:100%;object-fit:cover}
+.quote p{font:600 clamp(2.4rem,5.4vw,4.4rem)/1.05 var(--f-display);letter-spacing:-.04em;max-width:11ch}
+.quote p em{font-style:italic;color:var(--sand-deep)}
+
+/* kits */
+.kits{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,36px);margin-top:44px}
+@media (max-width:900px){.kits{grid-template-columns:1fr 1fr}}@media (max-width:520px){.kits{grid-template-columns:1fr}}
+.kit{display:grid;gap:8px;align-content:start;padding-top:22px;border-top:2px solid var(--line)}
+.kit.feat{border-top-color:var(--ink)}
+.kit .price{font:800 3rem/1 var(--f-display);letter-spacing:-.04em}
+.kit p{color:var(--ink-2)}
+.tag{justify-self:start;font:600 .68rem var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--sand-deep)}
+.kit-photo{margin-top:48px;border-radius:24px;overflow:hidden;aspect-ratio:21/8}
+.kit-photo{background:radial-gradient(70% 90% at 50% 60%,var(--surface),var(--ground-2))}.kit-photo img{width:100%;height:100%;object-fit:contain;padding:4% 8%;filter:drop-shadow(0 30px 28px rgba(17,32,43,.2))}
+.fine{margin-top:22px;font-size:.84rem;color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:center}
+.about>*{min-width:0}
+@media (max-width:900px){.about{grid-template-columns:1fr}}
+.facts{display:grid;gap:0}
+.facts div{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
+.facts div:first-child{border-top:1px solid var(--line)}
+.facts b{font:800 2.6rem/1 var(--f-display);letter-spacing:-.04em;color:var(--sand-deep)}
+.facts span{color:var(--ink-2);line-height:1.4}
+.partner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;margin-top:clamp(48px,7vw,80px);padding-block:28px !important;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.partner h3{font-size:1.5rem}
+.partner p{color:var(--ink-2);margin-top:6px;max-width:56ch;line-height:1.45}
+
+/* reserve */
+.reserve{background:var(--sand-soft);color:var(--ink)}
+.reserve .kicker{color:var(--sand-deep)}
+.reserve h2 em{font-style:italic;color:var(--sand-deep)}
+.res-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:start}
+.res-grid>*{min-width:0}
+@media (max-width:900px){.res-grid{grid-template-columns:1fr}}
+form.res{background:var(--surface);color:var(--ink);border-radius:26px;box-shadow:var(--shadow);padding:clamp(20px,3vw,34px);display:grid;gap:16px}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border:0;padding:0;margin:0}
+.roles legend{font-weight:600;font-size:.92rem;margin-bottom:8px;padding:0}
+@media (max-width:560px){.roles{grid-template-columns:1fr 1fr}}
+.roles label{display:flex;align-items:center;justify-content:center;text-align:center;min-height:50px;padding:8px;border-radius:14px;box-shadow:inset 0 0 0 1.5px var(--line);font-size:.88rem;font-weight:600;cursor:pointer}
+.roles input{position:absolute;opacity:0;pointer-events:none}
+.roles label:has(input:checked){background:var(--ink);color:var(--ground);box-shadow:none}
+.roles label:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:2px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.fields{grid-template-columns:1fr}}
+.f{display:grid;gap:6px}
+.f label{font-weight:600;font-size:.9rem}
+.f input{font:400 1rem var(--f-body);padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--ground);color:var(--ink);width:100%}
+.f input:focus{border-color:var(--ink-2);outline:none}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:var(--ink-2)}
+.consent input{margin-top:4px}
+.form-msg{font-weight:600;min-height:1.4em;color:var(--shut)}
+.done{display:grid;gap:10px;padding:10px 0}.done h3{font-size:1.8rem}
+.perks{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.perks li{display:flex;gap:12px;align-items:center;font-weight:500}
+.perks svg{width:22px;height:22px;stroke:var(--sand-deep);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.counter{margin-top:28px;display:flex;align-items:baseline;gap:10px}
+.counter b{font:800 3rem var(--f-display)}
+.admin{margin-top:22px;background:rgba(255,255,255,.07);border-radius:16px;padding:16px;overflow-x:auto}
+.admin table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:520px}
+.admin th,.admin td{text-align:left;padding:7px 8px;border-bottom:1px solid rgba(255,255,255,.14)}
+.admin th{font-size:.7rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+
+.mcta{display:none}
+.mcta{transition:opacity .3s,transform .3s}
+.mcta.hide{opacity:0;transform:translateY(20px);pointer-events:none}
+@media (max-width:700px){
+  .mcta{display:flex;justify-content:center;align-items:center;position:fixed;z-index:25;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));padding:16px;border-radius:999px;background:var(--ink);color:var(--ground);font:600 .82rem var(--f-body);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;box-shadow:0 14px 30px -10px rgba(17,32,43,.55)}
+  footer{padding-bottom:110px!important}
+  header.top .btn{display:none}
+  .hero{min-height:88vh}
+  .hero h1{font-size:2.6rem}
+  .sub{font-size:1.05rem}
+  section{padding-block:56px}
+  .stage{aspect-ratio:4/3}
+  .ladder-cu{width:22vw;margin-bottom:12%}
+  .ladder-vis .phone{width:min(250px,62vw)}
+  .phone{width:min(270px,72vw)}
+  .pout{padding:20px}
+  .places{max-height:none}
+  .laptop{margin-top:-90px!important}
+  .lid{padding:8px 8px 10px;border-radius:14px 14px 0 0}
+  .rh-now b{font-size:3.6rem}
+}
+.toast span,.toast b{display:block;line-height:1.35}
+.toast b{margin-bottom:2px}
+.piece span,.who span,.ease span,.ai3 p,.moment span,.rh-log li,.places li,.langs span,.track span,.chip,.fig-note,.fine,.pnote,.counts{line-height:1.4}
+.piece span,.who span,.ease span,.moment span{display:block}
+.sub{line-height:1.45}
+footer{padding-block:36px 52px;font-size:.86rem;color:var(--muted)}
+.made{display:inline-flex;align-items:center;gap:12px}
+.gorilla{display:inline-flex;align-items:center;gap:7px;color:var(--ink)}
+.gbadge{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#FAF8F4;box-shadow:inset 0 0 0 1.5px #E2DBD0}
+.gbadge svg{height:36px;width:auto;color:#13263A}
+.gorilla b{font:800 1.15rem var(--f-display);letter-spacing:-.03em}
+.gorilla small{font:600 .6rem var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);align-self:center;margin-left:-2px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+@media (prefers-reduced-motion:no-preference){
+  .hero>img{animation:heroz 2.6s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes heroz{from{transform:scale(1.08)}to{transform:scale(1)}}
+  @supports (animation-timeline: view()){
+    .mimg img,.photo img,.bld-photo img,.qimg img{animation:settle linear both;animation-timeline:view();animation-range:entry 0% cover 55%}
+    @keyframes settle{from{transform:scale(1.14) translateY(14px)}to{transform:scale(1) translateY(0)}}
+    .rise{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 35%}
+    @keyframes rise{from{transform:translateY(40px)}to{transform:none}}
+  }
+  .float{animation:float 7s ease-in-out infinite}
+  .float.d2{animation-delay:-2.3s}.float.d3{animation-delay:-4.6s}
+  @keyframes float{50%{transform:translateY(-12px)}}
+  
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Physical AI */
+#physical-ai{background:#13263A;color:#FAF8F4;overflow:hidden}
+#physical-ai .kicker{color:#D8C29A}
+#physical-ai h2{color:#FAF8F4}
+#physical-ai .sub{color:#C9D3DD}
+.pai{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,5vw,72px);align-items:center}
+.pai-steps{display:grid;gap:0;margin-top:28px}
+.pai-steps p{border-top:1px solid rgba(250,248,244,.14);padding:16px 0;font-size:1.05rem;color:#C9D3DD}
+.pai-steps b{color:#FAF8F4;font-weight:700;margin-right:.35em}
+.pai-next{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pai-next span{font-size:.9rem;padding:8px 14px;border-radius:999px;border:1px dashed #B08D57;color:#E8D9BE}
+.pai-next span.live{border:1px solid rgba(95,163,240,.6);color:#CFE2FA}
+.pai-vis{position:relative;max-width:720px;width:100%;justify-self:center}
+.pai-vis .pl{position:absolute;transform:translate(-50%,-50%);font:600 clamp(.66rem,1.5vw,.9rem) var(--f-body);color:#FAF8F4;background:rgba(250,248,244,.10);backdrop-filter:blur(4px);padding:5px 11px;border-radius:999px;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.pai-vis .pl i{width:9px;height:9px;border-radius:50%;border:2px solid;display:block}
+.pai-foot{margin-top:26px;font-size:.85rem;color:#8FA0B2;max-width:52ch}
+@media (max-width:860px){.pai{grid-template-columns:1fr}.pai-vis{order:-1}}
+
+.inv{background:#0E1C2B;color:#FAF8F4;padding-block:clamp(48px,7vw,88px)}
+.inv .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.inv .kicker{color:#D8C29A}
+.inv h3{font:700 clamp(1.7rem,3.4vw,2.6rem)/1.08 var(--f-display,'Plus Jakarta Sans');letter-spacing:-.02em;margin-top:12px;color:#FAF8F4}
+.inv p.lead{color:#C9D3DD;margin-top:16px;max-width:52ch;font-size:1.05rem}
+.inv .btn{margin-top:26px;background:#FAF8F4;color:#13263A}
+.wave{background:rgba(250,248,244,.05);border:1px solid rgba(250,248,244,.1);border-radius:22px;padding:22px 22px 18px}
+.wave-h{display:flex;justify-content:space-between;font-size:.9rem;color:#C9D3DD}
+.wave-h b{color:#FAF8F4;font-weight:600}
+.wave svg{width:100%;height:120px;display:block;margin-top:10px;overflow:hidden}
+.wave .w{animation:wscroll 9s linear infinite}
+@keyframes wscroll{to{transform:translateX(-600px)}}
+.wave-t{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:.92rem;color:#E8D9BE;opacity:0;transform:translateY(8px);animation:wt 9s ease-in-out infinite}
+.wave-t i{width:10px;height:10px;border-radius:50%;background:#E2A11B;display:block;flex:none}
+@keyframes wt{0%,52%{opacity:0;transform:translateY(8px)}62%,92%{opacity:1;transform:none}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.wave .w,.wave-t{animation:none;opacity:1;transform:none}}
+@media (max-width:860px){.inv .wrap{grid-template-columns:1fr}}
+
+/* Climate slider */
+#climate{background:var(--ground)}
+.clm{margin-top:34px;border-radius:28px;padding:clamp(20px,3vw,36px);transition:background .6s;background:#EEF4FA}
+.clm-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.clm-city{font:800 clamp(1.7rem,3.4vw,2.6rem)/1.05 var(--f-display,'Plus Jakarta Sans');letter-spacing:-.02em;color:#13263A}
+.clm-meta{color:#4E6273;font-size:1rem}
+.clm-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;margin-top:22px}
+.clm-r{display:grid;grid-template-columns:minmax(118px,150px) minmax(60px,1fr) 70px;align-items:center;gap:14px;padding:9px 0}
+.clm-r b{font-weight:700;font-size:1rem;color:#13263A}
+.clm-r .t{height:12px;border-radius:6px;background:rgba(19,38,58,.08);overflow:hidden}
+.clm-r .b{height:100%;border-radius:6px;transition:width .5s ease}
+.clm-r span{font-size:.9rem;font-weight:600;color:#4E6273;text-align:right}
+.clm-vis{position:relative;border-radius:20px;overflow:hidden}
+.clm-vis svg{display:block;width:100%;height:auto}
+.clm-fx{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.clm-fx i{position:absolute;top:0;border-radius:50%;background:#fff;box-shadow:0 0 3px rgba(19,38,58,.25);animation:clmfall linear infinite}
+@keyframes clmfall{from{transform:translateY(-20px)}to{transform:translateY(420px)}}
+.clm-cap{margin-top:10px;text-align:center;font-size:.95rem;color:#4E6273}
+.clm-ctl{margin-top:26px}
+.clm input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:8px;border-radius:4px;background:linear-gradient(90deg,#9CC3EA,#E9D3B0,#E2A11B);outline-offset:6px}
+.clm input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#13263A;box-shadow:0 0 0 7px rgba(19,38,58,.14);cursor:grab}
+.clm input[type=range]::-moz-range-thumb{width:30px;height:30px;border:0;border-radius:50%;background:#13263A;cursor:grab}
+.clm-labs{display:flex;justify-content:space-between;margin-top:10px;font-size:.88rem;color:#4E6273}
+.clm-hint{margin-top:8px;font-size:.85rem;color:var(--muted,#7E8C97)}
+@media (max-width:860px){.clm-grid{grid-template-columns:1fr}.clm-vis{order:-1}.clm-labs span:nth-child(2),.clm-labs span:nth-child(3),.clm-labs span:nth-child(4){display:none}}
+@media (prefers-reduced-motion:reduce){.clm-fx i{animation:none}}
+
+.f-wide{grid-column:1/-1}.res textarea{width:100%;font:inherit;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);resize:vertical}.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+</style>
+
+<link rel="canonical" href="https://getvaylo.io/">
+<meta property="og:url" content="https://getvaylo.io/">
+<meta property="og:image" content="https://getvaylo.io/img/og.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="vlogo" viewBox="23 26 1428 415"><path fill="currentColor" fill-rule="evenodd" d="M774 437C773 436 774 434 779 427C782 422 786 417 788 415C797 404 813 381 813 378C813 377 803 357 797 345C795 343 793 339 792 337C783 320 779 311 778 310C778 310 775 306 773 302C769 295 767 290 758 274C756 270 754 266 753 264C751 261 748 255 745 248C741 242 738 237 738 236C737 235 734 229 725 212C721 205 718 200 718 200C718 199 714 193 711 187C708 180 702 170 698 163C695 157 692 152 692 151C692 151 691 150 690 148C687 144 687 142 692 138C699 131 708 129 720 129C728 129 733 129 737 130C742 132 747 135 747 137C747 138 748 141 750 145C755 153 766 176 770 184C772 187 776 194 780 200C783 207 786 213 788 216C789 218 791 222 792 224C794 226 796 232 799 236C801 240 805 248 808 252C810 257 814 265 816 268C818 272 820 275 820 275C820 276 831 296 833 299C834 301 839 311 842 316C845 321 847 321 850 315C851 313 854 308 855 305C857 302 858 299 859 298C862 293 870 279 880 260C888 244 893 235 898 226C902 220 904 216 904 215C904 215 906 211 909 207C911 202 914 196 916 194C917 192 918 189 919 188C922 183 933 163 940 149C951 129 951 128 974 129C990 129 998 130 1005 135C1009 138 1009 140 1004 147C1002 151 999 155 999 156C998 158 997 161 995 163C994 165 991 170 989 174C987 178 985 182 983 184C982 187 981 189 980 190C980 191 977 196 973 202C970 209 965 217 963 222C953 240 951 243 944 256C939 264 935 271 935 272C934 274 933 277 931 279C930 281 927 286 925 290C923 294 922 297 921 298C920 300 907 323 904 328C903 330 901 334 899 336C898 339 897 341 896 342C896 343 894 347 891 351C889 355 885 362 883 366C860 410 846 428 834 435L828 438L802 438C787 438 775 437 774 437ZM1280 391C1219 386 1167 346 1154 294C1149 276 1149 271 1149 254C1150 246 1150 236 1151 232C1152 226 1157 211 1158 208C1159 207 1160 203 1162 200C1173 175 1197 152 1226 139C1233 136 1254 129 1264 127C1283 122 1322 122 1340 127C1374 135 1396 146 1417 167C1424 173 1436 188 1436 190C1436 191 1437 192 1438 194C1439 195 1441 200 1442 204C1444 207 1446 211 1447 211C1449 212 1449 299 1447 301C1446 302 1444 306 1442 310C1432 337 1404 365 1374 378C1362 383 1358 384 1356 384C1355 384 1353 384 1352 385C1346 388 1325 391 1305 391C1294 392 1282 392 1280 391ZM508 386C507 386 501 386 494 385C453 381 422 364 409 337C406 332 404 327 404 326C404 325 403 321 402 318C399 307 402 287 409 275C420 255 440 242 473 235C492 231 544 230 554 234C555 235 558 236 561 236C566 237 572 241 573 245C576 252 567 264 555 270C544 276 542 276 521 277C485 279 475 281 464 291C455 300 457 317 468 325C481 334 499 338 532 338C580 338 609 327 617 305C619 300 619 297 619 267C619 237 619 235 617 228C609 200 588 187 546 184C521 182 494 187 473 196C466 200 464 200 457 196C441 189 430 179 431 174C433 169 450 152 453 152C454 152 455 151 456 151C459 148 474 143 486 140C513 133 559 132 582 139C638 153 667 181 672 228C675 246 675 302 672 314C670 328 662 342 652 352C646 357 637 364 636 364C635 364 634 365 633 365C632 366 629 368 625 369C621 371 617 373 616 373C607 378 585 383 562 385C546 387 516 388 508 386ZM222 384C209 382 207 380 196 358C188 342 181 329 176 322C175 319 172 314 170 310C169 307 166 301 164 298C162 295 159 288 156 283C153 278 149 270 146 266C144 261 140 254 138 250C135 243 129 233 122 218C119 214 115 206 113 202C111 198 107 191 104 187C102 183 100 179 100 179C100 178 97 173 94 168C91 162 88 157 88 157C88 156 85 152 82 146C79 140 76 135 76 134C75 133 73 129 71 124C68 120 64 112 62 108C55 96 48 83 47 81C46 80 45 78 44 76C44 75 42 72 40 70C39 67 37 62 35 59C33 55 30 51 30 50C29 49 28 47 28 46L28 44L56 44C71 44 85 44 86 44C92 46 98 53 103 64C106 70 110 77 111 79C115 85 117 89 125 106C134 122 138 129 143 138C146 145 153 158 165 181C169 188 173 195 173 196C174 197 181 210 189 226C193 232 198 244 202 251C213 272 221 287 227 299C233 311 235 312 238 306C239 303 243 297 246 292C251 283 259 268 264 258C265 256 266 254 267 253C269 250 280 230 280 229C280 229 285 221 290 211C296 201 301 193 301 192C302 190 303 188 304 186C306 183 307 181 308 180C308 178 313 170 318 161C324 151 328 144 328 143C328 143 340 121 342 118C343 117 344 115 344 114C345 112 347 109 348 106C350 104 352 101 352 100C353 98 354 96 355 95C356 93 364 78 368 72C378 53 380 49 388 45C393 43 394 43 422 43C440 43 450 43 451 44C451 45 450 47 448 50C445 55 367 191 357 208C353 215 339 240 338 242C337 243 336 245 336 246C335 248 333 251 332 254C330 256 328 259 328 260C327 262 325 265 324 268C322 270 320 273 320 274C319 276 317 279 316 282C314 284 312 287 312 288C311 290 309 293 308 296C306 298 304 302 302 306C300 309 298 313 297 313C297 314 296 315 296 315C296 316 294 320 291 324C289 329 286 335 284 337C283 339 282 342 281 343C278 348 268 366 268 367C268 367 266 370 265 373C260 380 255 382 244 385C234 386 232 386 222 384ZM1044 384C1042 383 1042 374 1042 213C1042 24 1041 40 1050 36C1062 29 1081 28 1090 34C1091 35 1093 36 1094 36C1099 36 1099 27 1099 211C1099 382 1099 382 1097 384C1094 385 1047 386 1044 384ZM1329 338C1363 329 1385 310 1394 278C1397 267 1397 248 1394 236C1387 212 1371 193 1347 183C1335 177 1314 173 1302 173C1285 173 1260 179 1250 185C1249 186 1247 187 1246 188C1234 194 1222 207 1214 221C1211 226 1208 239 1207 250C1202 296 1232 332 1284 340C1293 342 1320 340 1329 338Z"/></symbol></svg>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Vaylo home"><b><svg class="vl" viewBox="23 26 1428 415" role="img" aria-label="Vaylo"><use href="#vlogo"/></svg><sup>™</sup></b><small>Water peace of mind</small></a>
+    <nav class="links" aria-label="Sections"><a href="#life">Real life</a><a href="#how">How it works</a><a href="#physical-ai">Physical AI</a><a href="#planner">Planner</a><a href="#install">Install</a><a href="#about">About</a><a href="#buildings">Buildings</a></nav>
+    <a class="btn sm" href="#reserve">Early access</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <img src="img/bath.jpg" alt="A mother laughing with her toddler at bath time">
+  <div class="toast" aria-hidden="true"><i style="--rc:#2B6CB5"></i><div><small>now</small><b>Bathroom wet · 10 min</b><span>Bath time? Totally normal. We'll stay quiet.</span></div></div>
+  <div class="wrap">
+    <h1>Smart water protection for real life.</h1>
+    <p class="sub">Splashing is allowed. Floods are not. Vaylo learns what's normal in your home and steps in only when it isn't.</p>
+    <div class="ctas"><a class="btn light" href="#reserve">Reserve early access <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div><svg viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 3 5 3 3 0 0 0 5 2V4a3 3 0 0 0-3 0zM15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-3 5 3 3 0 0 1-5 2"/></svg>AI that learns<br>your home</div>
+    <div><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg>Rules for<br>every room</div>
+    <div><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg>Closes only<br>when needed</div>
+    <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>No subscription<br>to stay safe</div>
+    <div><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg>Works with your<br>smart home</div>
+  </div>
+</div>
+
+<section id="life">
+  <div class="wrap">
+    <div class="moments-head">
+      <div><p class="kicker">Real homes. Real life.</p><h2 style="margin-top:14px">Life is messy. <em style="font-style:italic;color:var(--sand-deep)">That's fine.</em></h2></div>
+      <p class="sub">Built for real homes. Not showrooms.</p>
+    </div>
+    <div class="moments">
+      <figure class="moment"><div class="mimg"><img src="img/kitchen.jpg" alt="A father and two kids at a messy breakfast"></div><figcaption><span class="when">7:45 am</span><b>Breakfast chaos.</b><span>Splash? Fine. Leak? Handled.</span></figcaption></figure>
+      <figure class="moment"><div class="mimg"><img src="img/beach.jpg" alt="A couple on a beach terrace, she checks her phone"></div><figcaption><span class="when">Naples, FL</span><b>Your house is 1,000 miles away.</b><span>One tap. Water off.</span></figcaption></figure>
+      <figure class="moment"><div class="mimg"><img src="img/student.jpg" alt="A student asleep on the sofa"></div><figcaption><span class="when">1:30 am</span><b>Asleep. Tub running.</b><span>Vaylo caught it.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="ladder-sec" id="how">
+  <div class="wrap">
+    <p class="kicker">How it works</p>
+    <h2 style="margin-top:14px;max-width:16ch">The leak alarm that thinks before it shouts.</h2>
+    <div class="ladder">
+      <div>
+        <ol class="track" id="track"><li><button type="button" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>All good</b><span>Blue ring. Water on. Nothing to do.</span></span><i class="prog"></i></button></li><li><button type="button" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><span><b>Ask</b><span>Amber ring. A soft chime and a friendly ping.</span></span><i class="prog"></i></button></li><li><button type="button" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></span><span><b>Alarm</b><span>Red and loud. Your backup person hears it too.</span></span><i class="prog"></i></button></li><li><button type="button" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8 12h8"/></svg></span><span><b>Water off</b><span>Solid red. Main valve closed. You know why.</span></span><i class="prog"></i></button></li><li><button type="button" aria-pressed="false"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span><span><b>Back to normal</b><span>Green. One tap and the water is back.</span></span><i class="prog"></i></button></li></ol>
+        <p class="learn"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Tap "it's fine" and Vaylo learns. For that room only.</p>
+        <p class="hint2">Plays by itself. Tap any step.</p>
+      </div>
+      <div class="ladder-vis"><div class="cu-wrap" id="cuWrap"><div class="waves" aria-hidden="true"><i></i><i></i><i></i></div><img class="ladder-cu" id="ladderCu" src="img/cu-hd.webp" alt="Vaylo Control Unit light ring"></div><div class="phone" aria-live="polite"><div class="scr scr2" id="ladderScr"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
+  <div class="wrap aiwrap">
+    <div>
+      <p class="kicker">Vaylo AI</p>
+      <h2 style="margin-top:14px;max-width:14ch">Gets smarter every day. So you don't have to.</h2>
+      <div class="ai3">
+        <p><b>Smarter detection</b>Knows a long shower from a slow leak.</p>
+        <p><b>Fewer false alarms</b>Every "it's fine" makes it sharper.</p>
+        <p><b>Private by design</b>Learning is anonymous. Shutoff runs at home.</p>
+      </div>
+    </div>
+    <div class="sig" aria-label="Illustration: Vaylo reads water signals over a week and tells normal use from a slow leak">
+      <div class="sig-head"><span class="live"><i></i>Learning</span><span>Upstairs bath · this week</span></div>
+      <div class="sig-plot">
+        <svg viewBox="0 0 600 220" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M20 170H580" stroke="var(--line)" stroke-width="1.5"/>
+          <path d="M20 110H580" stroke="var(--line)" stroke-width="1" stroke-dasharray="3 6"/>
+          <path class="sig-line" d="M20 170 L60 170 C70 170 72 92 85 92 C98 92 100 170 110 170 L190 170 C195 170 198 140 205 140 C212 140 214 170 218 170 C222 170 224 145 229 145 C234 145 236 170 240 170 L300 170 C308 170 310 96 322 96 C334 96 337 170 345 170 L420 170 C470 168 520 130 580 58" fill="none" stroke="var(--blue)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="1000"/>
+          <path class="sig-leak" d="M420 170 C470 168 520 130 580 58" fill="none" stroke="var(--shut)" stroke-width="3.5" stroke-linecap="round" pathLength="1000"/>
+        </svg>
+        <span class="stag t1" style="left:14%;top:26%"><i></i>Shower · normal</span>
+        <span class="stag t2" style="left:37%;top:50%"><i></i>Dishwasher · normal</span>
+        <span class="stag t3" style="left:54%;top:28%"><i></i>Shower · normal</span>
+        <span class="stag t4 bad" style="left:78%;top:12%"><i></i>Slow leak · flagged</span>
+      </div>
+      <div class="sig-days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+      <p class="sig-foot"><b>214</b> patterns learned in this home</p>
+    </div>
+  </div>
+  <div class="wrap why">
+    <div class="phone why-phone" aria-live="polite"><div class="scr scr2" id="whyScr"></div></div>
+    <div>
+      <p class="kicker">Tell Vaylo why</p>
+      <h2 style="margin-top:14px;max-width:16ch">"I've got this." And it learns why.</h2>
+      <p class="sub" style="margin-top:16px">Before an alarm goes off, you can stop it. Pick a reason and for how long. Vaylo remembers, and learns the pattern for that room.</p>
+      <div class="whyreasons">
+        <span>Filled a big tub or barrel</span><span>Mopping the floor</span><span>Every spring, this room floods</span><span>Guests in the house</span><span>Type your own reason</span>
+      </div>
+      <div class="whyscope"><span>Just now</span><span>Today</span><span>Every spring</span><span>Always</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="physical-ai" aria-labelledby="pai-h">
+  <div class="wrap pai">
+    <div>
+      <p class="kicker">Physical AI</p>
+      <h2 id="pai-h" style="margin-top:14px;max-width:14ch">Physical AI for homes and buildings.</h2>
+      <p class="sub" style="margin-top:16px">AI that lives in the real world, not on a screen. Vaylo senses what happens in every room, learns what normal looks like, and acts on its own in seconds.</p>
+      <div class="pai-steps">
+        <p><b>Sense.</b>Water, humidity and temperature, room by room.</p>
+        <p><b>Learn.</b>Your home's own patterns. Showers, washers, seasons.</p>
+        <p><b>Act.</b>Asks, warns, shuts off. Locally, even offline.</p>
+      </div>
+      <div class="pai-next" aria-label="Sensing today and next"><span class="live">Water</span><span class="live">Humidity</span><span class="live">Temperature</span></div>
+    </div>
+    <div class="pai-vis"><svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A home where Vaylo sensors for water, humidity and temperature feed one local AI, with vibration and smoke sensing coming next" style="width:100%;height:auto;display:block;overflow:visible"><path d="M70 236 L450 34 L830 236" fill="none" stroke="#3A5268" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><rect x="110" y="220" width="680" height="400" rx="10" fill="none" stroke="#3A5268" stroke-width="6"/><path d="M110 420H790 M450 220V620" stroke="#3A5268" stroke-width="3" opacity=".7"/><path d="M230 345 Q340 285 450 515" fill="none" stroke="#5FA3F0" stroke-width="2.5" opacity=".45"/><circle r="6" fill="#5FA3F0" opacity="0"><animateMotion dur="4.5s" begin="0.0s" repeatCount="indefinite" path="M230 345 Q340 285 450 515" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 .05 .55 .95"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.5s" begin="0.0s" repeatCount="indefinite"/></circle><circle r="6" fill="#5FA3F0" opacity="0"><animateMotion dur="4.5s" begin="2.3s" repeatCount="indefinite" path="M230 345 Q340 285 450 515" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 .05 .55 .95"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.5s" begin="2.3s" repeatCount="indefinite"/></circle><circle cx="230" cy="345" r="22" fill="#5FA3F0" opacity=".18"><animate attributeName="r" values="16;30;16" dur="3.6s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/><animate attributeName="opacity" values=".28;0;.28" dur="3.6s" begin="0.0s" repeatCount="indefinite"/></circle><circle cx="230" cy="345" r="11" fill="#5FA3F0"/><path d="M370 290 Q410 230 450 515" fill="none" stroke="#5FA3F0" stroke-width="2.5" opacity=".45"/><circle r="6" fill="#5FA3F0" opacity="0"><animateMotion dur="4.9s" begin="0.7s" repeatCount="indefinite" path="M370 290 Q410 230 450 515" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 .05 .55 .95"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.9s" begin="0.7s" repeatCount="indefinite"/></circle><circle r="6" fill="#5FA3F0" opacity="0"><animateMotion dur="4.9s" begin="3.0s" repeatCount="indefinite" path="M370 290 Q410 230 450 515" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 .05 .55 .95"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="4.9s" begin="3.0s" repeatCount="indefinite"/></circle><circle cx="370" cy="290" r="22" fill="#5FA3F0" opacity=".18"><animate attributeName="r" values="16;30;16" dur="3.6s" begin="0.5s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/><animate attributeName="opacity" values=".28;0;.28" dur="3.6s" begin="0.5s" repeatCount="indefinite"/></circle><circle cx="370" cy="290" r="11" fill="#5FA3F0"/><path d="M690 330 Q570 270 450 515" fill="none" stroke="#5FA3F0" stroke-width="2.5" opacity=".45"/><circle r="6" fill="#5FA3F0" opacity="0"><animateMotion dur="5.3s" begin="1.4s" repeatCount="indefinite" path="M690 330 Q570 270 450 515" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 .05 .55 .95"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="5.3s" begin="1.4s" repeatCount="indefinite"/></circle><circle r="6" fill="#5FA3F0" opacity="0"><animateMotion dur="5.3s" begin="3.7s" repeatCount="indefinite" path="M690 330 Q570 270 450 515" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 .05 .55 .95"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="5.3s" begin="3.7s" repeatCount="indefinite"/></circle><circle cx="690" cy="330" r="22" fill="#5FA3F0" opacity=".18"><animate attributeName="r" values="16;30;16" dur="3.6s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/><animate attributeName="opacity" values=".28;0;.28" dur="3.6s" begin="1.0s" repeatCount="indefinite"/></circle><circle cx="690" cy="330" r="11" fill="#5FA3F0"/><path d="M210 570 Q330 455 450 515" fill="none" stroke="#5FA3F0" stroke-width="2.5" opacity=".45"/><circle r="6" fill="#5FA3F0" opacity="0"><animateMotion dur="5.7s" begin="2.1s" repeatCount="indefinite" path="M210 570 Q330 455 450 515" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 .05 .55 .95"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="5.7s" begin="2.1s" repeatCount="indefinite"/></circle><circle r="6" fill="#5FA3F0" opacity="0"><animateMotion dur="5.7s" begin="4.4s" repeatCount="indefinite" path="M210 570 Q330 455 450 515" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 .05 .55 .95"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.85;1" dur="5.7s" begin="4.4s" repeatCount="indefinite"/></circle><circle cx="210" cy="570" r="22" fill="#5FA3F0" opacity=".18"><animate attributeName="r" values="16;30;16" dur="3.6s" begin="1.5s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/><animate attributeName="opacity" values=".28;0;.28" dur="3.6s" begin="1.5s" repeatCount="indefinite"/></circle><circle cx="210" cy="570" r="11" fill="#5FA3F0"/><circle cx="450" cy="515" r="70" fill="#5FA3F0" opacity=".12"><animate attributeName="r" values="58;84;58" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/><animate attributeName="opacity" values=".2;.04;.2" dur="5s" repeatCount="indefinite"/></circle><rect x="402" y="467" width="96" height="96" rx="26" fill="#FAF8F4"/><circle cx="450" cy="515" r="22" fill="none" stroke="#5FA3F0" stroke-width="6"><animate attributeName="stroke-opacity" values="1;.55;1" dur="5s" repeatCount="indefinite"/></circle></svg><span class="pl" style="left:30.0%;top:48.0%"><i style="border-color:#5FA3F0;background:#5FA3F0"></i>Water</span><span class="pl" style="left:46.7%;top:39.4%"><i style="border-color:#5FA3F0;background:#5FA3F0"></i>Humidity</span><span class="pl" style="left:73.3%;top:45.6%"><i style="border-color:#5FA3F0;background:#5FA3F0"></i>Temperature</span><span class="pl" style="left:27.8%;top:95.6%"><i style="border-color:#5FA3F0;background:#5FA3F0"></i>Water</span></div>
+  </div>
+</section>
+
+<section id="talks">
+  <div class="wrap talks">
+    <div>
+      <p class="kicker">Works with everything</p>
+      <h2 style="margin-top:14px">One system. Every app. Every language.</h2>
+      <p class="sub" style="margin-top:18px">Other brands want you in their app. Vaylo shows up in the ones you already use, and speaks your language.</p>
+      <div class="brands" aria-label="Works with"><span>Alexa</span><span>Google Home</span><span>Apple Home</span><span>SmartThings</span><span>Home Assistant</span><span>Matter</span></div>
+      <div class="langs" aria-label="Example alerts in different languages">
+        <span><b>EN</b>Water is off. You're safe.</span>
+        <span><b>ES</b>El agua está cerrada. Todo bien.</span>
+        <span><b>PT</b>A água foi fechada. Tudo certo.</span>
+        <span><b>FR</b>L'eau est coupée. Tout va bien.</span>
+        <span><b>中文</b>水阀已关闭。一切安全。</span>
+        <span><b>VI</b>Đã khóa nước. Mọi thứ an toàn.</span>
+        <span><b>KO</b>물이 차단되었습니다. 안전합니다.</span>
+        <span><b>NO</b>Vannet er stengt. Alt er trygt.</span>
+      </div>
+    </div>
+  </div>
+  <p class="wrap fine" style="margin-top:28px">Official "Works with" badges appear once each certification is complete.</p>
+</section>
+
+<section id="rooms">
+  <div class="wrap zones">
+    <div class="photo"><img src="img/shower.jpg" alt="A calm walk-in shower with warm light"></div>
+    <div>
+      <p class="kicker">Zone intelligence</p>
+      <h2 style="margin-top:14px">Yes, you can put a sensor in the shower.</h2>
+      <div class="rooms" role="group" aria-label="Choose a room">
+        <button type="button" data-r="bath" aria-pressed="true">Shower</button>
+        <button type="button" data-r="kitchen" aria-pressed="false">Under the sink</button>
+        <button type="button" data-r="heater" aria-pressed="false">Water heater</button>
+        <button type="button" data-r="laundry" aria-pressed="false">Laundry</button>
+        <button type="button" data-r="crawl" aria-pressed="false">Crawlspace</button>
+      </div>
+      <div class="rule" aria-live="polite"><p id="ruleP"></p><div class="chips" id="ruleC"></div></div>
+      <div class="sens" role="group" aria-label="Sensitivity for this room"><span>Sensitivity</span><button type="button" data-s="relaxed" aria-pressed="false">Relaxed</button><button type="button" data-s="balanced" aria-pressed="true">Balanced</button><button type="button" data-s="strict" aria-pressed="false">Strict</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="mold">
+  <div class="wrap mold">
+    <div>
+      <p class="kicker">Made for Florida</p>
+      <h2 style="margin-top:14px">Away for the summer? Mold isn't.</h2>
+      <p class="sub" style="margin-top:18px">Stop paying to cool an empty house all summer. Vaylo watches humidity in every room and runs the AC only when the air needs it.</p>
+      <div class="ai3 two">
+        <p><b>Mold watch</b>Keeps humidity under 60%, the line the EPA recommends.</p>
+        <p><b>Lower power bills</b>The AC runs when the air needs it, not all day. Less energy, still dry.</p>
+        <p><b>Runs itself while you're away</b>No house checker, no guessing. Vaylo keeps the balance and tells you if something changes.</p>
+        <p><b>Window check</b>Window left open? The AC pauses and you get a ping.</p>
+      </div>
+      <p class="fine" style="margin-top:22px">Vaylo lowers the risk of water damage and mold. It can't guarantee a dry, mold-free home. See terms.</p>
+    </div>
+    <div class="rh" aria-label="Example humidity reading">
+      <span class="plabel">Living room · Naples, FL</span>
+      <div class="rh-now"><b>57%</b><span>humidity, all good</span></div>
+      <div class="scale"><em style="left:38.6%"></em></div>
+      <div class="scale-n"><span style="left:14%">Ideal</span><span style="left:35.7%">OK</span><span style="left:50%">Watch</span><span style="left:78%">Mold risk</span></div>
+      <ul class="rh-log">
+        <li><span>2:10 pm</span>Humidity hit 63%. AC switched to dry mode.</li>
+        <li><span>3:40 pm</span>Back to 57%. AC eased off.</li>
+        <li><span>6:05 pm</span>Guest bedroom window open. AC paused.</li>
+      </ul>
+      <div class="acday">
+        <span class="plabel">Example day while you're away</span>
+        <div class="acrow"><span>AC on a timer</span><div class="hrs"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><b>24 h</b></div>
+        <div class="acrow"><span>Vaylo</span><div class="hrs"><i></i><i></i><i></i><i></i><i class="on2"></i><i class="on2"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on2"></i><i class="on2"></i><i class="on2"></i><i class="on2"></i><i></i><i></i><i></i><i></i><i></i><i class="on2"></i><i></i></div><b>7 h</b></div>
+        <div class="hrs-n"><span>12 am</span><span>6 am</span><span>12 pm</span><span>6 pm</span><span>12 am</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="climate" aria-labelledby="clm-h">
+  <div class="wrap">
+    <p class="kicker">Any climate</p>
+    <h2 id="clm-h" style="margin-top:14px;max-width:18ch">Built for frost. Ready for the tropics.</h2>
+    <p class="sub" style="margin-top:16px">Designed in Norway, where pipes freeze. Tested by people who lived in Florida, where homes sweat. Slide to see what Vaylo does where you live.</p>
+    <div class="clm" id="clm">
+      <div class="clm-top"><span class="clm-city" id="clmCity">Toronto</span><span class="clm-meta" id="clmMeta"></span></div>
+      <div class="clm-grid">
+        <div id="clmRows"></div>
+        <div><div class="clm-vis"><svg viewBox="0 0 660 470" fill="none" aria-hidden="true">
+<defs><linearGradient id="clmSky" x1="0" y1="0" x2="0" y2="1"><stop id="clmS1" offset="0" stop-color="#DCE9F6"/><stop id="clmS2" offset="1" stop-color="#F4F8FC"/></linearGradient></defs>
+<rect width="660" height="470" fill="url(#clmSky)"/>
+<circle id="clmSun" cx="560" cy="80" r="44" fill="#F2C14E" opacity="0"/>
+<rect width="230" height="400" fill="#E9E4DA"/>
+<path d="M0 50H230M0 100H230M0 150H230M0 200H230M0 250H230M0 300H230M0 350H230" stroke="#D6CFC2" stroke-width="2"/>
+<rect y="400" width="660" height="70" fill="#C9C3B6" id="clmGround"/>
+<rect y="392" width="660" height="18" fill="#FFFFFF" id="clmSnowG"/>
+<rect x="230" y="300" width="430" height="22" fill="#9AA3AB"/>
+<rect x="300" y="282" width="40" height="58" rx="6" fill="#7E8890"/>
+<rect x="270" y="200" width="150" height="150" rx="34" fill="#F4F5F2" stroke="#D6D8D3" stroke-width="3"/>
+<rect x="290" y="330" width="110" height="10" rx="5" fill="#3A3D42"/>
+<rect x="296" y="230" width="98" height="6" rx="3" fill="#5FA3F0"/>
+<text x="345" y="300" text-anchor="middle" font-size="24" font-weight="700" fill="#8A8680" font-family="Arial">VAYLO</text>
+<path id="clmCap" d="M266 214 Q300 186 345 192 Q392 186 424 214 Q410 206 345 204 Q280 206 266 214Z" fill="#FFFFFF"/>
+</svg><div class="clm-fx" id="clmFx"></div></div><p class="clm-cap" id="clmCapT"></p></div>
+      </div>
+      <div class="clm-ctl">
+        <input type="range" id="clmRange" min="0" max="1000" value="250" aria-label="Climate, from freezing to tropical">
+        <div class="clm-labs"><span>Oslo · Aspen</span><span>Toronto</span><span>New York</span><span>Houston</span><span>Miami</span></div>
+        <p class="clm-hint">Illustration of where each feature matters most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="everyone">
+  <div class="wrap">
+    <p class="kicker">Made for everyone</p>
+    <h2 style="margin-top:14px;max-width:18ch">One button. One sentence. One tap. Water off.</h2>
+    <div class="ease">
+      <div><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b>Low vision</b><span>Say "Alexa, turn off the water." Spoken alerts and a screen-reader-friendly app.</span></div>
+      <div><svg viewBox="0 0 24 24"><path d="M9 18a3 3 0 0 0 6 0M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/></svg><b>Hard of hearing</b><span>Bright light ring, flashing smart lights, strong vibration and text messages.</span></div>
+      <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg><b>Limited mobility</b><span>One big button on the Control Unit. No crawling under sinks or into closets.</span></div>
+      <div><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M14 20c0-2 1.5-4 4-4s4 2 4 4"/></svg><b>Family and caregivers</b><span>Share access, so someone you trust gets the alert too.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="planner" style="background:var(--ground-2)">
+  <div class="wrap">
+    <p class="kicker">Protection planner</p>
+    <h2 style="margin-top:14px;max-width:18ch">Where should your sensors go? Ask the planner.</h2>
+    <p class="sub" style="margin-top:16px">Answer a few taps. Get a placement plan, a price and a bid-ready spec for homeowners, plumbers and builders.</p>
+    <div class="ptabs" role="tablist" aria-label="Planner mode">
+      <button role="tab" id="m-home" aria-selected="true" data-m="home">My home</button>
+      <button role="tab" id="m-pro" aria-selected="false" data-m="pro" tabindex="-1">Pro project</button>
+      <button role="tab" id="m-bld" aria-selected="false" data-m="bld" tabindex="-1">Building</button>
+    </div>
+    <div class="planner">
+      <form class="pin" id="pin" onsubmit="return false"><div class="q only-pro" hidden><label for="p-proj">Project</label><input class="txt" id="p-proj" value="Smith residence"></div><div class="only-house"><div class="q"><span>Bathrooms</span><div class="stp2"><button type="button" data-k="baths" data-d="-1" aria-label="Fewer bathrooms">−</button><input class="num" type="number" inputmode="numeric" id="o-baths" data-k="baths" value="2" aria-label="baths"><button type="button" data-k="baths" data-d="1" aria-label="More bathrooms">+</button></div></div><div class="q"><span>Kitchens</span><div class="stp2"><button type="button" data-k="kitchens" data-d="-1" aria-label="Fewer kitchens">−</button><input class="num" type="number" inputmode="numeric" id="o-kitchens" data-k="kitchens" value="1" aria-label="kitchens"><button type="button" data-k="kitchens" data-d="1" aria-label="More kitchens">+</button></div></div><div class="q"><label for="t-laundry">Laundry room</label><input type="checkbox" class="sw" id="t-laundry" checked></div><div class="q"><label for="t-ice">Fridge with ice maker</label><input type="checkbox" class="sw" id="t-ice"></div><div class="q"><label for="t-crawl">Crawlspace or basement</label><input type="checkbox" class="sw" id="t-crawl"></div><div class="q"><label for="t-attic">Pipes in the attic</label><input type="checkbox" class="sw" id="t-attic"></div><div class="q"><label for="t-soft">Water softener or filter</label><input type="checkbox" class="sw" id="t-soft"></div><div class="q"><label for="t-irr">Irrigation line</label><input type="checkbox" class="sw" id="t-irr"></div><div class="q"><label for="t-humid">Hot, humid climate (FL, TX, Gulf)</label><input type="checkbox" class="sw" id="t-humid"></div><div class="q"><label for="s-heater">Water heater</label><select id="s-heater"><option value="garage">Garage</option><option value="closet">Closet</option><option value="attic">Attic</option><option value="basement">Basement</option><option value="none">Tankless</option></select></div><div class="q"><label for="s-main">Main line</label><select id="s-main"><option value="auto">Not sure</option><option value="½"">½"</option><option value="¾"">¾"</option><option value="1"">1"</option><option value="1¼"">1¼"</option><option value="1½"">1½"</option></select></div><div class="q"><label for="s-occ">Lived in</label><select id="s-occ"><option value="full">Full-time</option><option value="seasonal">Seasonal</option><option value="rental">Rental</option></select></div></div><div class="only-bld" hidden><div class="q"><label for="b-proj">Building</label><input class="txt" id="b-proj" value="Bayview Residences"></div><div class="q"><span>Units</span><div class="stp2"><button type="button" data-k="units" data-d="-1" aria-label="Fewer units">−</button><input class="num" type="number" inputmode="numeric" id="o-units" data-k="units" value="48" aria-label="units"><button type="button" data-k="units" data-d="1" aria-label="More units">+</button></div></div><div class="q"><span>Floors</span><div class="stp2"><button type="button" data-k="floors" data-d="-1" aria-label="Fewer floors">−</button><input class="num" type="number" inputmode="numeric" id="o-floors" data-k="floors" value="6" aria-label="floors"><button type="button" data-k="floors" data-d="1" aria-label="More floors">+</button></div></div><div class="q"><span>Baths per unit</span><div class="stp2"><button type="button" data-k="ubaths" data-d="-1" aria-label="Fewer baths per unit">−</button><input class="num" type="number" inputmode="numeric" id="o-ubaths" data-k="ubaths" value="1" aria-label="ubaths"><button type="button" data-k="ubaths" data-d="1" aria-label="More baths per unit">+</button></div></div><div class="q"><span>Mechanical rooms</span><div class="stp2"><button type="button" data-k="mech" data-d="-1" aria-label="Fewer mechanical rooms">−</button><input class="num" type="number" inputmode="numeric" id="o-mech" data-k="mech" value="2" aria-label="mech"><button type="button" data-k="mech" data-d="1" aria-label="More mechanical rooms">+</button></div></div><div class="q"><label for="b-laundry">Washer in each unit</label><input type="checkbox" class="sw" id="b-laundry" checked></div><div class="q"><label for="b-dish">Dishwasher in each unit</label><input type="checkbox" class="sw" id="b-dish" checked></div><div class="q"><label for="b-student">Student housing</label><input type="checkbox" class="sw" id="b-student"></div></div></form>
+
+      <div class="pout" aria-live="polite">
+        <div class="pout-top">
+          <div><span class="plabel" style="margin:0">Risk level</span><b id="r-risk" class="risk">Medium</b></div>
+          <div class="tot"><span class="plabel" style="margin:0" id="r-pricelabel">Estimate</span><b id="r-price">$0</b></div>
+        </div>
+        <div class="meter"><i id="r-meter"></i></div>
+        <div class="counts" id="r-counts"></div>
+        <ol class="places" id="r-list"></ol>
+        <p class="pnote" id="r-note"></p>
+        <div class="pacts">
+          <button type="button" class="btn sm" id="dl-spec">Download bid spec</button>
+          <button type="button" class="btn sm ghostd" id="dl-csv">Equipment list (CSV)</button>
+          <button type="button" class="btn sm ghostd" id="cp-spec">Copy spec</button>
+        </div>
+        <p class="pmsg" id="p-msg" role="status"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="system">
+  <div class="wrap">
+    <p class="kicker">The system</p>
+    <h2 style="margin-top:14px">A few pieces. Zero drama.</h2>
+    <div class="product">
+      <div class="stage rise"><span class="shadowfloor"></span>
+        <img class="s-valve float" src="img/cut-valve.webp" alt="Vaylo Smart Valve">
+        <img class="s-cu float d2" src="img/cu-hd.webp" alt="Vaylo Control Unit">
+        <img class="s-cable float d3" src="img/cut-cable.webp" alt="Vaylo sensor cable">
+        <img class="s-combo float" src="img/cut-combo.webp" alt="Vaylo Combo Sensor">
+        <img class="s-spot float d2" src="img/cut-spot.webp" alt="Vaylo Spot Sensor">
+      </div>
+      <div class="pieces">
+        <div class="piece"><img src="img/cu-hd.webp" alt=""><div><b>Control Unit</b><span>The brain, with a light ring and one big shutoff button.</span></div></div>
+        <div class="piece"><img src="img/cut-valve.webp" alt=""><div><b>Smart Valve</b><span>Lead-free stainless steel on your main line.</span></div></div>
+        <div class="piece"><img src="img/cut-combo.webp" alt=""><div><b>Combo Sensor</b><span>Water, temperature and humidity.</span></div></div>
+        <div class="piece"><img src="img/cut-spot.webp" alt=""><div><b>Spot Sensor</b><span>Small, for under sinks and behind fridges.</span></div></div>
+        <div class="piece"><img src="img/cut-cable.webp" alt=""><div><b>Sensor cable</b><span>Wired and supervised, around water heaters.</span></div></div>
+      </div>
+    </div>
+    <div class="specs">
+      <span class="spec"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/></svg>Battery backup</span>
+      <span class="spec"><svg viewBox="0 0 24 24"><path d="M12 3c-4 6-6 9-6 12a6 6 0 0 0 12 0c0-3-2-6-6-12z"/></svg>Weatherproof valve</span>
+      <span class="spec"><svg viewBox="0 0 24 24"><path d="M2 12h20M7 7v10M17 7v10"/></svg>½" to 1½" pipes</span>
+      <span class="spec"><svg viewBox="0 0 24 24"><path d="M12 2v20M4 7l16 10M20 7 4 17"/></svg>Freeze protection</span>
+      <span class="spec"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>Alexa · Google Home · Apple Home · SmartThings</span>
+    </div>
+  </div>
+</section>
+
+<section class="bld" id="buildings">
+  <div class="wrap">
+    <p class="kicker">For buildings</p>
+    <h2 style="margin-top:14px">Every unit. One screen.<br>Happier residents.</h2>
+    <p class="sub" style="margin-top:16px">Condos, HOAs, rentals and student housing. Close one apartment, not the whole building.</p>
+  </div>
+  <div class="bld-photo"><img src="img/condo.jpg" alt="A sunny condo building with palm trees and residents on their balconies"></div>
+  <div class="wrap">
+    <div class="laptop rise">
+      <div class="lid"><div class="cam"></div>
+        <div class="screen">
+          <div class="app-top"><b><svg class="vl" viewBox="23 26 1428 415" role="img" aria-label="Vaylo"><use href="#vlogo"/></svg></b><span class="bn">Bayview Residences · Tower A</span><span class="kp"><span><b>48</b>units</span><span><b>1</b>valve closed</span><span><b>2</b>to check</span></span></div>
+          <div class="app"><div class="floors" id="floors" aria-label="Units, example data"></div><div class="feed" id="feed" aria-live="polite"></div></div>
+        </div>
+      </div>
+      <div class="base"></div>
+    </div>
+  </div>
+
+  <div class="wrap why sos">
+    <div>
+      <p class="kicker">Home SOS</p>
+      <h2 style="margin-top:14px;max-width:15ch">Water coming through the ceiling?</h2>
+      <p class="sub" style="margin-top:16px">Leaks don't stay in one apartment. Tap Home SOS, add a photo if you like, and Vaylo checks the units around you. The leak gets found and stopped, even if the neighbor isn't home.</p>
+      <div class="whyreasons"><span>From the ceiling</span><span>Through the wall</span><span>Under my floor</span><span>In the hallway</span></div>
+    </div>
+    <div class="phone why-phone" aria-live="polite"><div class="scr scr2" id="sosScr"></div></div>
+  </div>
+</section>
+
+<section id="install" style="background:var(--ground-2)">
+  <div class="wrap">
+    <p class="kicker">For plumbers</p>
+    <h2 style="margin-top:14px;max-width:20ch">Plumbers: in and out in under an hour.</h2>
+    <p class="sub" style="margin-top:14px">Five steps. Standard tools. No surprises.</p>
+    <ol class="isteps"><li><div class="ill"><svg viewBox="0 0 240 160"><rect x="6" y="74" width="74" height="22" rx="3" fill="#EDE8E1" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="160" y="74" width="74" height="22" rx="3" fill="#EDE8E1" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path class="a-dash" d="M92 98h56" stroke="#2A73C9" stroke-width="2" stroke-dasharray="4 4"/><g class="a-drop"><rect x="92" y="64" width="56" height="34" rx="5" fill="#E2DBD0" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="84" y="68" width="10" height="26" rx="2" fill="#D3CABC" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="146" y="68" width="10" height="26" rx="2" fill="#D3CABC" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="100" y="22" width="40" height="40" rx="8" fill="#13263A"/><circle cx="120" cy="42" r="8" fill="none" stroke="#2A73C9" stroke-width="2.5"/></g><path class="a-bob" d="M200 18v30M192 40l8 8 8-8" stroke="#2A73C9" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="120" y="140" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#4E6273">NPT · ½" to 1½"</text></svg></div><div class="sh"><span class="sn">01</span><span class="tm">15 min</span></div><b>Shut off and cut in the valve</b><span class="sd">Drain the line. Fit the valve with standard NPT. Any size from ½" to 1½".</span></li><li><div class="ill"><svg viewBox="0 0 240 160"><rect x="34" y="22" width="64" height="64" rx="14" fill="#fff" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle class="a-glow" cx="66" cy="50" r="13" fill="none" stroke="#2A73C9" stroke-width="3"/><path d="M66 86c0 30 40 40 84 34" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><g class="a-plug"><rect x="146" y="112" width="16" height="16" rx="3" fill="#13263A"/></g><rect x="170" y="98" width="42" height="42" rx="8" fill="#13263A"/><g class="a-spark" stroke="#2A73C9" stroke-width="2.5" stroke-linecap="round"><path d="M150 100l-6-8"/><path d="M162 96l2-10"/><path d="M172 92l8-6"/></g><text x="120" y="154" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#4E6273">Click. Fits one way.</text></svg></div><div class="sh"><span class="sn">02</span><span class="tm">10 min</span></div><b>Mount the Control Unit</b><span class="sd">Two screws on the wall. Plug in the sealed cable. It only fits one way.</span></li><li><div class="ill"><svg viewBox="0 0 240 160"><rect x="72" y="8" width="64" height="124" rx="12" fill="#fff" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="86" y="32" width="36" height="36" fill="none" stroke="#13263A" stroke-width="1.5"/><g fill="#13263A"><rect x="90" y="36" width="9" height="9"/><rect x="109" y="36" width="9" height="9"/><rect x="90" y="55" width="9" height="9"/><rect x="103" y="48" width="5" height="5"/><rect x="111" y="57" width="6" height="6"/></g><path class="a-scan" d="M80 34h48" stroke="#2A73C9" stroke-width="2.5" stroke-linecap="round"/><rect x="86" y="82" width="36" height="8" rx="4" fill="#2A73C9"/><g class="a-pair"><ellipse cx="184" cy="118" rx="30" ry="9" fill="#D3CABC"/><path d="M154 104v14a30 9 0 0 0 60 0v-14" fill="#fff" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="184" cy="104" rx="30" ry="9" fill="#fff" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><circle class="a-ping" cx="184" cy="104" r="12" fill="none" stroke="#2A73C9" stroke-width="2"/><text x="40" y="152" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#4E6273">Beep. Paired.</text></svg></div><div class="sh"><span class="sn">03</span><span class="tm">5 min</span></div><b>Scan and pair the sensors</b><span class="sd">Scan the QR code on the box. Every sensor pairs itself.</span></li><li><div class="ill"><svg viewBox="0 0 240 160"><rect x="20" y="22" width="200" height="104" rx="10" fill="#fff" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M120 22v104M20 74h100" stroke="#13263A" stroke-width="1.5"/><g font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#4E6273" font-size="11"><text x="30" y="40">Bath</text><text x="30" y="92">Kitchen</text><text x="130" y="40">Laundry</text></g><g class="a-pop p1"><circle cx="88" cy="56" r="7" fill="#2A73C9"/><circle cx="88" cy="56" r="13" fill="none" stroke="#2A73C9" stroke-opacity=".35" stroke-width="2"/></g><g class="a-pop p2"><circle cx="92" cy="108" r="7" fill="#2A73C9"/><circle cx="92" cy="108" r="13" fill="none" stroke="#2A73C9" stroke-opacity=".35" stroke-width="2"/></g><g class="a-pop p3"><circle cx="190" cy="62" r="7" fill="#2A73C9"/><circle cx="190" cy="62" r="13" fill="none" stroke="#2A73C9" stroke-opacity=".35" stroke-width="2"/></g><g class="a-pop p4"><circle cx="168" cy="104" r="14" fill="#2F9A6A"/><path d="M161 104l5 5 9-10" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="120" y="150" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#4E6273">Plop, plop, plop. All good.</text></svg></div><div class="sh"><span class="sn">04</span><span class="tm">10 min</span></div><b>Place and test</b><span class="sd">Drop sensors where water goes. The app tests the valve and every zone.</span></li><li><div class="ill"><svg viewBox="0 0 240 160"><g class="a-doc"><path d="M76 12h66l24 24v100H76z" fill="#fff" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M142 12v24h24" stroke="#13263A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="90" y="42" font-family="Inter,sans-serif" font-size="12" font-weight="800" fill="#13263A">PDF</text><path class="a-line l1" d="M90 56h56" stroke="#D8CFC2" stroke-width="3" stroke-linecap="round"/><path class="a-line l2" d="M90 70h56" stroke="#D8CFC2" stroke-width="3" stroke-linecap="round"/><path class="a-line l3" d="M90 84h40" stroke="#D8CFC2" stroke-width="3" stroke-linecap="round"/><path class="a-sign" d="M96 112c6-10 10 6 16-4s8 4 14-2 8 6 14 0" stroke="#2A73C9" stroke-width="2" fill="none" stroke-linecap="round"/></g><g class="a-pop p4"><circle cx="168" cy="124" r="18" fill="#2F9A6A"/><path d="M159 124l6 6 11-12" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g><text x="120" y="156" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#4E6273">Done. Documented.</text></svg></div><div class="sh"><span class="sn">05</span><span class="tm">2 min</span></div><b>Hand over</b><span class="sd">The customer gets a commissioning report and an insurance certificate.</span></li></ol>
+    <div class="profacts">
+      <span><b>Standard tools</b>Pipe wrench and a drill</span>
+      <span><b>No electrician</b>Plug-in power, 24 V to the valve</span>
+      <span><b>Every size</b>½" to 1½" stainless valves</span>
+      <span><b>Get paid</b>On every activated system</span>
+    </div>
+    <div class="diy">
+      <div class="diy-art" aria-hidden="true">
+        <img src="img/cut-combo.webp" alt="" style="left:2%;bottom:8%;width:46%" class="float">
+        <img src="img/cut-spot.webp" alt="" style="left:44%;bottom:4%;width:32%" class="float d2">
+        <img src="img/cut-cable.webp" alt="" style="right:0;top:6%;width:36%" class="float d3">
+      </div>
+      <div>
+        <p class="kicker">Not ready for the valve?</p>
+        <h2 style="margin-top:14px">Start with sensors. Add the shutoff later.</h2>
+        <p class="sub" style="margin-top:16px">Place them yourself today and get alerts in the smart home app you already use. Want automatic shutoff? Book a Vaylo Pro from the app and a partner plumber installs the valve.</p>
+        <a class="book" href="#reserve"><i><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></i>Book a Vaylo Pro</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pros">
+  <div class="wrap pros">
+    <div class="photo"><img src="img/plumber.jpg" alt="A plumber explaining a new water valve to a homeowner"></div>
+    <div>
+      <p class="kicker">For the pros</p>
+      <h2 style="margin-top:14px">The plumber leaves. The protection stays.</h2>
+      <div class="who">
+        <div><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><div><b>Plumbers</b><span>Install it on every water call. Get paid on every system.</span></div></div>
+        <div><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Insurers</b><span>Fewer claims, real data, and devices people actually keep on.</span></div></div>
+        <div><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg><div><b>Property managers</b><span>One dashboard, from one condo to a whole campus.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote"><div class="qgrid"><div class="wrap qtext"><p>Flow should be <em>worry-free.</em></p></div><div class="qimg"><img src="img/water.jpg" alt="Sunlight dancing on deep blue water"></div></div></section>
+
+<section id="kits">
+  <div class="wrap">
+    <p class="kicker">Estimated pricing</p>
+    <h2 style="margin-top:14px">Start with one system. Grow by the sensor.</h2>
+    <div class="kits">
+      <div class="kit"><span class="tag">Start here</span><h3>Sensor Pack</h3><div class="price">$79</div><p>Two Combo Sensors. Add the valve anytime.</p></div>
+      <div class="kit feat"><span class="tag">Most homes</span><h3>Home Kit ¾"</h3><div class="price">$349</div><p>Control Unit, valve and 4 sensors.</p></div>
+      <div class="kit"><span class="tag">Bigger homes</span><h3>Home Kit 1"</h3><div class="price">$379</div><p>Same kit for larger main lines.</p></div>
+      <div class="kit"><span class="tag">Two zones</span><h3>Zoned Kit</h3><div class="price">$449</div><p>Two valves, 6 sensors. House plus guest wing or irrigation.</p></div>
+    </div>
+    <div class="kit-photo"><img src="img/cut-group.webp" alt="Vaylo Control Unit, smart valve and sensors" loading="lazy"></div>
+    <p class="fine">Estimated retail prices. Final pricing is set with our distribution partners. Extra sensors from about $29. No monthly fee to stay protected. Buildings priced per door.</p>
+  </div>
+</section>
+
+<section class="inv" id="investors" aria-labelledby="inv-h">
+  <div class="wrap">
+    <div>
+      <p class="kicker">For investors and partners</p>
+      <h3 id="inv-h">Water is where we start.</h3>
+      <p class="lead">Vaylo is physical AI for the built environment. The same sensors and local AI will learn to listen for trouble: a pump that rattles, an AC that struggles, a water heater about to fail. A virtual janitor for every home and building, booking service before things break.</p>
+      <a class="btn" href="#reserve" id="investorCta">Request the investor deck</a>
+    </div>
+    <div class="wave" aria-label="Illustration: Vaylo hears a machine sound change from normal to unusual and books service">
+      <div class="wave-h"><b>Utility room · circulation pump</b><span>Listening</span></div>
+      <svg viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><g class="w"><path d="M0 60.0 L4 62.7 L8 65.2 L12 66.8 L16 67.1 L20 66.0 L24 63.6 L28 60.2 L32 56.7 L36 53.6 L40 51.7 L44 51.4 L48 52.8 L52 55.7 L56 59.5 L60 63.4 L64 66.6 L68 68.5 L72 68.7 L76 67.2 L80 64.3 L84 60.8 L88 57.2 L92 54.4 L96 52.8 L100 52.8 L104 54.1 L108 56.4 L112 59.2 L116 61.9 L120 64.0 L124 65.0 L128 65.0 L132 64.1 L136 62.5 L140 60.6 L144 58.9 L148 57.5 L152 56.7 L156 56.6 L160 57.2 L164 58.2 L168 59.4 L172 60.8 L176 61.9 L180 62.8 L184 63.1 L188 62.9 L192 62.0 L196 60.7 L200 59.2 L204 57.6 L208 56.3 L212 55.6 L216 55.7 L220 56.8 L224 58.7 L228 61.1 L232 63.6 L236 65.6 L240 66.6 L244 66.4 L248 64.8 L252 62.0 L256 58.7 L260 55.4 L264 52.8 L268 51.6 L272 52.0 L276 54.0 L280 57.3 L284 61.2 L288 65.0 L292 67.7 L296 68.9 L300 68.4 L304 66.2 L308 62.9 L312 59.1 L316 55.6 L320 53.2 L324 52.2 L328 52.8 L332 54.7 L336 57.5 L340 60.5 L344 63.2 L348 65.0 L352 65.7 L356 65.2 L360 63.8 L364 61.9 L368 59.8 L372 58.0 L376 56.8 L380 56.3 L384 56.6 L388 57.4 L392 58.7 L396 60.1 L400 61.4 L404 62.4 L408 62.9 L412 63.0 L416 62.4 L420 61.4 M600 57.1 L604 56.1 L608 56.0 L612 56.6 L616 57.8 L620 59.2 L624 60.7 L628 61.9 L632 62.7 L636 63.0 L640 62.7 L644 62.0 L648 60.8 L652 59.4 L656 58.0 L660 57.0 L664 56.4 L668 56.4 L672 57.3 L676 58.8 L680 60.7 L684 62.8 L688 64.5 L692 65.5 L696 65.5 L700 64.3 L704 62.0 L708 59.1 L712 56.1 L716 53.7 L720 52.3 L724 52.5 L728 54.2 L732 57.1 L736 60.8 L740 64.5 L744 67.4 L748 68.8 L752 68.6 L756 66.6 L760 63.3 L764 59.4 L768 55.7 L772 52.9 L776 51.6 L780 51.9 L784 53.9 L788 56.9 L792 60.3 L796 63.4 L800 65.7 L804 66.6 L808 66.3 L812 64.7 L816 62.5 L820 60.0 L824 57.8 L828 56.2 L832 55.5 L836 55.8 L840 56.8 L844 58.3 L848 59.9 L852 61.4 L856 62.5 L860 63.0 L864 63.0 L868 62.4 L872 61.4 L876 60.2 L880 58.8 L884 57.7 L888 56.9 L892 56.6 L896 57.0 L900 58.1 L904 59.6 L908 61.5 L912 63.3 L916 64.6 L920 65.2 L924 64.7 L928 63.1 L932 60.7 L936 57.9 L940 55.3 L944 53.3 L948 52.6 L952 53.4 L956 55.6 L960 58.8 L964 62.5 L968 65.8 L972 68.1 L976 68.8 L980 67.8 L984 65.2 L988 61.6 L992 57.6 L996 54.2 L1000 51.9 L1004 51.3 L1008 52.4 L1012 54.9 L1016 58.3 L1020 61.9" fill="none" stroke="#5FA3F0" stroke-width="2" stroke-linejoin="round"/><path d="M420 75.8 L424 60.4 L428 41.3 L432 41.0 L436 48.8 L440 61.0 L444 92.2 L448 99.5 L452 85.0 L456 58.0 L460 35.7 L464 37.3 L468 48.2 L472 62.6 L476 77.0 L480 103.0 L484 82.5 L488 51.7 L492 26.4 L496 40.4 L500 47.9 L504 69.1 L508 92.8 L512 99.5 L516 79.2 L520 54.6 L524 29.8 L528 26.7 L532 47.9 L536 67.4 L540 87.0 L544 75.4 L548 75.3 L552 42.1 L556 30.1 L560 39.0 L564 47.4 L568 75.6 L572 100.7 L576 95.5 L580 67.2 L584 45.5 L588 27.6 L592 36.9 L596 56.6 L600 73.8 M1020 68.1 L1024 51.4 L1028 44.8 L1032 32.4 L1036 56.7 L1040 78.9 L1044 88.9 L1048 79.4 L1052 64.0 L1056 46.7 L1060 32.8 L1064 44.9 L1068 59.0 L1072 75.9 L1076 85.4 L1080 86.4 L1084 59.3 L1088 36.5 L1092 17.1 L1096 48.7 L1100 61.4 L1104 76.6 L1108 98.2 L1112 80.5 L1116 56.8 L1120 40.0 L1124 40.6 L1128 43.9 L1132 63.1 L1136 90.7 L1140 101.5 L1144 82.8 L1148 50.2 L1152 20.9 L1156 46.0 L1160 49.3 L1164 74.2 L1168 95.0 L1172 85.5 L1176 78.0 L1180 47.4 L1184 22.8 L1188 38.5 L1192 52.9 L1196 72.0 L1200 77.4" fill="none" stroke="#E2A11B" stroke-width="2" stroke-linejoin="round"/></g></svg>
+      <p class="wave-t"><i></i>Unusual sound. Service booked with the supplier.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <p class="kicker">About Vaylo</p>
+      <h2 style="margin-top:14px;max-width:16ch">Thirty years of keeping water where it belongs.</h2>
+      <p class="sub" style="margin-top:18px">Vaylo is built by people who have spent 30 years in building technology, smart homes and leak protection. Our roots are in Norway, where water safety has been part of building rules for years. That know-how is now built for homes everywhere.</p>
+    </div>
+    <div class="facts">
+      <div><b>30</b><span>years in building tech and leak protection</span></div>
+      <div><b>NO</b><span>Norwegian quality, built for strict rules</span></div>
+      <div><b>Any</b><span>country. Swap the plug, pick the language.</span></div>
+    </div>
+  </div>
+  <div class="wrap partner">
+    <div>
+      <h3>Want to bring Vaylo to your country?</h3>
+      <p>We work with local partners who handle approvals, sales and installation. Let's talk about a distribution agreement.</p>
+    </div>
+    <a class="btn" href="#reserve" id="becomePartner">Become a partner</a>
+  </div>
+</section>
+
+<section class="reserve" id="reserve">
+  <div class="wrap res-grid">
+    <div>
+      <p class="kicker">Launching 2027</p>
+      <h2 style="margin-top:14px">Be first in <em>line</em>.</h2>
+      <ul class="perks">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Launch pricing, locked in</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>First units shipped</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Pros and partners get a personal call</li>
+      </ul>
+    </div>
+    <form class="res" id="resForm" novalidate>
+      <fieldset class="roles"><legend>I'm a</legend>
+        <label><input type="radio" name="role" id="r1" value="Homeowner" checked><span>Homeowner</span></label>
+        <label><input type="radio" name="role" id="r2" value="Plumber"><span>Plumber</span></label>
+        <label><input type="radio" name="role" id="r3" value="Property / HOA"><span>Property / HOA</span></label>
+        <label><input type="radio" name="role" id="r4" value="Student housing"><span>Student housing</span></label>
+        <label><input type="radio" name="role" id="r5" value="Insurer"><span>Insurer</span></label>
+        <label><input type="radio" name="role" id="r6" value="Distributor"><span>Distributor</span></label>
+        <label><input type="radio" name="role" id="r7" value="Investor"><span>Investor</span></label>
+        <label><input type="radio" name="role" id="r8" value="Other"><span>Other</span></label>
+      </fieldset>
+      <div class="fields">
+        <div class="f"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name"></div>
+        <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+        <div class="f"><label for="f-zip">ZIP</label><input id="f-zip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="10"></div>
+        <div class="f"><label for="f-org">Company <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="f-org" name="org" autocomplete="organization"></div>
+        <div class="f f-wide"><label for="f-msg">Question or feedback <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="f-msg" name="message" rows="3" maxlength="4000"></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+      </div>
+      <label class="consent"><input type="checkbox" id="f-ok"><span>Yes, email me about early access. No spam, promise. <a href="/privacy.html">Privacy</a></span></label>
+      <button class="btn" type="submit" id="submitBtn" style="justify-self:start">Save my spot</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+<a class="mcta hide" href="#reserve">Get early access</a>
+
+<footer><div class="wrap">
+  <span class="fbrand"><svg class="vl" viewBox="23 26 1428 415" role="img" aria-label="Vaylo"><use href="#vlogo"/></svg><span>™ · Water peace of mind</span> · © 2026 · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@getvaylo.io">hello@getvaylo.io</a></span>
+  <span class="made">Vaylo is made by
+    <span class="gorilla"><span class="gbadge"><svg viewBox="190 84 643 855" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M499 930C477 921 474 919 456 902C446 893 440 887 440 888C440 889 440 894 441 899C442 905 442 910 442 910C441 913 425 901 408 884C391 867 392 868 380 839C377 830 373 822 372 820C369 815 355 799 337 780L324 766L324 792L324 817L319 812C294 784 262 739 261 728C259 718 248 660 247 660C247 659 241 667 234 677C226 687 220 695 220 695C219 696 219 693 217 682C214 661 213 644 213 617L214 592L218 576C221 567 225 556 227 550C228 544 230 538 230 538C229 538 222 541 213 545C205 549 197 552 197 552C196 551 210 518 228 477L240 449L236 437C228 413 226 394 230 375C231 364 233 360 241 352C249 345 255 342 265 341L273 341L274 329C283 273 288 246 293 239C301 226 318 205 335 188C338 185 341 182 341 181C341 181 336 181 330 181C325 180 320 180 320 179C320 178 365 149 373 144C377 142 390 137 405 133C419 128 431 124 432 124C432 123 429 120 426 116L420 108L451 108L482 108L491 103C496 100 502 96 506 94L512 90L527 99L542 108L573 108C590 108 604 108 604 108C604 108 601 112 598 116C595 120 592 123 592 124C592 124 605 128 620 133C650 142 647 141 682 164L706 179L695 180C689 181 684 181 684 182C684 182 689 187 695 194C709 209 714 215 725 230C734 241 735 244 737 254C738 261 748 315 750 329L751 341L759 341C770 342 775 345 784 354C793 363 795 368 796 389C796 408 793 426 786 444L784 449L792 468C811 511 828 552 827 552C827 552 819 549 811 545C802 541 795 538 794 538C794 539 795 541 796 543C796 546 800 557 804 570C810 591 810 592 811 608C812 625 812 642 810 660C809 674 806 693 805 695C805 695 799 688 791 677C780 663 777 659 777 661C776 662 773 677 770 695C767 713 764 729 763 731C760 741 725 791 705 813L700 818L700 792L700 767L697 769C693 773 664 805 658 812C653 818 651 822 642 843L632 867L624 876C610 891 584 913 582 912C582 911 582 906 583 900C584 894 584 889 584 888C583 888 581 890 579 892C556 916 548 921 524 930C512 935 512 935 499 930ZM531 868C547 865 557 862 569 856L579 852L570 849C565 848 559 846 556 845L552 843L555 843C593 837 598 835 603 831C607 827 619 809 625 798L629 790L626 757C624 727 623 724 622 728C622 730 618 744 615 759C608 791 606 795 597 803C571 828 492 833 445 814C431 809 421 799 417 790C416 787 412 771 408 754C404 738 401 724 401 724C400 724 400 729 400 735C399 741 398 755 397 768L395 790L399 797C410 819 421 833 430 835C436 837 463 842 467 842C476 842 468 846 452 850L445 852L454 856C469 863 483 867 506 871C512 872 515 872 531 868ZM508 803L511 801L516 803C524 807 531 806 537 801C539 799 539 799 541 800C549 806 550 806 559 793C559 792 562 793 565 795C573 800 578 799 586 790C591 786 591 785 592 777C593 768 593 757 590 747C588 738 588 738 585 746C581 754 571 769 565 775L561 780L557 776L553 772L547 776C542 779 541 780 539 779C537 778 532 778 525 779C517 780 510 780 501 779C492 778 487 778 486 779C484 780 482 780 477 776L470 772L467 776L463 780L459 775C454 769 445 757 440 747L436 739L435 744C432 754 431 767 432 776C433 785 433 786 438 790C446 799 451 800 459 795C465 791 464 791 468 797C473 804 475 805 481 802L485 799L489 802C496 807 502 807 508 803ZM389 657C393 634 399 607 403 600C410 586 435 576 476 569C506 564 526 564 558 571C595 578 616 588 622 602C627 615 639 671 639 686C639 697 641 683 645 642C650 592 650 595 645 581C639 561 616 519 613 520C600 526 587 529 573 530L566 531L575 526C596 515 605 505 605 493C605 485 604 483 588 468C565 444 559 443 525 457L512 462L498 457C466 444 460 445 440 463C421 481 419 484 419 493C419 505 431 518 452 527C455 529 458 530 458 531C456 533 425 527 416 522C413 521 411 520 410 520C410 520 395 544 392 550C383 568 375 590 375 597C375 601 382 671 384 685L384 690L386 680C386 674 388 664 389 657ZM437 652C440 640 447 616 450 613C450 612 452 614 454 617C455 620 458 624 459 625L461 627L465 624C474 616 478 615 481 616C484 617 489 617 502 615C511 614 513 614 525 616C535 617 539 617 542 616C547 615 552 617 560 624C564 628 564 627 570 618C572 615 574 612 574 612C577 612 586 648 588 663L589 674L594 667C604 654 608 642 609 625C609 616 609 615 607 611C600 599 590 595 578 601L574 603L572 600C571 599 568 596 566 594C561 589 558 589 551 593L548 596L542 591C534 585 524 584 516 589L512 592L508 589C500 584 489 585 482 592L477 596L473 594C466 589 463 589 458 594C456 596 454 599 452 600L450 603L445 601C434 595 424 599 417 611C415 615 415 616 415 625C416 642 421 655 430 668L434 674L435 667C436 664 437 657 437 652ZM360 549C368 527 386 500 399 489C402 487 403 485 404 481C406 475 409 471 421 460L427 455L419 457C410 460 395 460 386 458L380 456L384 456C396 454 403 452 410 449L418 446L410 445C392 443 381 436 374 420C372 416 372 414 372 404L372 392L362 392C358 392 352 393 349 393C343 395 343 394 350 386C358 378 364 374 372 372C381 369 383 369 397 377C463 413 464 413 470 413C484 413 491 402 490 385L489 378L491 380C496 387 499 396 499 404L500 412L504 410C506 408 509 407 510 406C512 405 512 405 514 406C515 407 518 408 521 410L525 412L524 408C524 402 525 394 529 387C532 381 537 375 536 378C532 391 536 406 545 411C556 416 551 418 621 380C643 368 645 368 658 374C665 378 684 395 679 394C678 393 671 393 664 392L652 392L652 395C653 397 653 399 653 401C654 405 652 416 650 421C643 436 632 443 614 445L606 446L614 449C621 452 630 454 640 456L644 456L638 458C630 460 614 460 605 457C601 456 598 456 598 456C598 457 598 457 599 457C599 457 604 461 609 466C616 473 618 476 620 480C621 484 624 488 630 494C644 508 653 522 662 543C667 555 667 555 667 551C667 531 660 506 650 492C646 486 646 486 653 486C660 486 667 484 672 480C679 476 694 456 706 436L711 427L709 418C695 355 693 348 691 346C687 343 663 329 646 321L631 313L624 316C615 320 576 337 560 344C554 347 548 350 548 350C547 350 549 346 552 341C561 326 563 323 562 324C561 324 557 327 553 329C521 350 503 350 471 329C466 326 462 323 462 323C461 323 469 337 474 344C475 347 477 350 477 350C476 350 469 347 459 342C440 334 399 315 395 314C393 313 376 321 353 334C333 345 332 347 330 353C329 359 321 393 316 414L313 427L318 435C341 474 352 485 369 486C373 486 377 486 377 486C377 487 375 490 372 495C363 510 357 532 357 552C357 556 357 556 360 549ZM495 520C494 518 492 516 490 515C487 513 483 512 462 506C456 505 448 498 445 493C444 489 444 489 452 480C464 468 469 468 483 481C487 484 493 489 496 491C505 497 506 498 506 502C506 506 502 515 498 520L496 522L495 520ZM524 517C520 511 518 505 518 501C518 498 520 496 528 491C532 488 537 484 541 480C555 467 559 468 573 481C581 490 581 490 577 496C572 502 567 505 556 508C539 512 535 514 531 518L527 522L524 517ZM533 441L544 437L533 433C517 427 510 427 497 431C493 433 487 435 485 435C480 437 480 438 485 439C488 439 495 442 501 444L512 449L517 447C519 446 527 443 533 441ZM431 426C435 424 437 422 437 422C436 420 398 400 397 400C396 401 396 404 396 407C396 425 413 434 431 426ZM613 428C618 427 624 422 626 417C628 413 629 402 627 401C626 400 588 420 587 422C587 422 596 427 600 428C603 429 609 429 613 428ZM271 397C282 373 282 375 272 370C263 366 259 367 255 376C250 385 251 408 257 423C257 425 258 424 271 397ZM770 415C776 388 771 367 759 368C756 368 744 374 744 375C744 377 766 424 767 424C768 424 769 420 770 415Z"/></svg></span><b>Gorilla</b><small>Forge</small></span>
+  </span>
+  <span>Vaylo helps reduce the risk of water damage and mold but does not guarantee prevention. Images are concept visuals. Pricing, specs and certifications are targets until launch.</span>
+</div></footer>
+
+<script>
+(function(){
+  const RING={blue:"#2A73C9",amber:"#E2A11B",red:"#D24A33",green:"#2F9A6A"};
+  const CUF={blue:"none",amber:"hue-rotate(178deg) saturate(1.5) brightness(1.05)",red:"hue-rotate(145deg) saturate(1.8)",green:"hue-rotate(-75deg) saturate(1.3)"};
+  const dry='<div class="rooms2">'+["Shower","Kitchen","Water heater","Laundry"].map(n=>'<div><i style="background:#2F9A6A"></i><span>'+n+'</span><em>Dry</em></div>').join("")+'</div>';
+  const rooms=(wet)=>'<div class="rooms2">'+[["Shower",wet],["Kitchen",""],["Water heater",""],["Laundry",""]].map(([n,w])=>'<div><i style="background:'+(w?RING.blue:"#2F9A6A")+'"></i><span>'+n+'</span><em>'+(w||"Dry")+'</em></div>').join("")+'</div>';
+  function app(c,center,title,sub,acts,extra,pulse){return '<div class="a-top"><b><svg class="vl" viewBox="'+document.querySelector("#vlogo").getAttribute("viewBox")+'"><use href="#vlogo"/></svg></b><span>Home</span></div><div class="ring'+(pulse?" pulse":"")+'" style="--rc:'+RING[c]+'"><span>'+center+'</span></div><div class="a-msg"><b>'+title+'</b><p>'+sub+'</p></div>'+(acts?'<div class="a-acts">'+acts+'</div>':'')+(extra||"");}
+  const who='<div class="who2"><div><i class="av">You</i><em>Not seen</em></div><div><i class="av sam">S</i><em>Sam · texted</em></div></div><div class="dev"><svg viewBox="0 0 24 24"><path d="M4 10v4h3l5 4V6L7 10H4z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span>Kitchen speaker announced it</span><b>✓</b></div>';
+  const screens=[
+    ["blue",app("blue","All good","Everything is dry","12 sensors checked in. Water is on.","",dry),false],
+    ["amber",app("amber","Check?","Shower wet for an hour","Long shower, or something to worry about?",'<span class="pri">All good</span><span class="off">Turn water off</span>',rooms("Wet · 60 min")),false],
+    ["red",app("red","Alarm","No reply. Alarm is on.","Shower still wet after 75 minutes.",'<span class="pri">I\'m on it</span><span class="off">Turn water off</span>',who,true),true],
+    ["red",app("red","Water off","We closed the main valve","Shower wet 90 min with no reply. Check when you can.",'<span class="pri wide">Turn water back on</span>'),false],
+    ["green",app("green","All good","Water is back on","Learned: long showers on weekends are normal here.","",dry),false]
+  ];
+  const scr=document.getElementById("ladderScr"), track=document.getElementById("track"), btns=[...track.querySelectorAll("button")], lcu=document.getElementById("ladderCu"), cw=document.getElementById("cuWrap");
+  const DUR=4200; let cur=0, timer=null, resume=null;
+  const reduceM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function setStep(i){cur=i;btns.forEach((b,j)=>{b.setAttribute("aria-pressed",j===i);const p=b.querySelector(".prog");if(p){p.style.display="none";void p.offsetWidth;p.style.display="";}});scr.innerHTML=screens[i][1];
+    if(lcu)lcu.style.filter=CUF[screens[i][0]]+" drop-shadow(0 30px 30px rgba(17,32,43,.25))";if(cw)cw.classList.toggle("alarm",!!screens[i][2]);}
+  function auto(){if(reduceM)return;track.classList.add("auto");track.style.setProperty("--dur",DUR+"ms");clearInterval(timer);timer=setInterval(()=>setStep((cur+1)%screens.length),DUR);}
+  btns.forEach((b,i)=>b.addEventListener("click",()=>{clearInterval(timer);clearTimeout(resume);track.classList.remove("auto");setStep(i);resume=setTimeout(()=>{auto()},12000);}));
+  setStep(0);
+  if("IntersectionObserver" in window){new IntersectionObserver(e=>{if(e[0].isIntersecting){if(!timer&&!resume)auto()}else{clearInterval(timer);timer=null}}).observe(track);}else auto();
+
+  /* mobile CTA: show after the hero, hide at the form */
+  const mc=document.querySelector(".mcta"), heroEl=document.querySelector(".hero"), resEl=document.getElementById("reserve");
+  if(mc&&"IntersectionObserver" in window){let hv=true,rv=false;const upd=()=>mc.classList.toggle("hide",hv||rv);
+    new IntersectionObserver(e=>{hv=e[0].isIntersecting;upd()}).observe(heroEl);
+    new IntersectionObserver(e=>{rv=e[0].isIntersecting;upd()}).observe(resEl);}
+  const ic=document.getElementById("investorCta"); if(ic) ic.addEventListener("click",()=>{const r=document.getElementById("r7"); if(r){r.checked=true; r.dispatchEvent(new Event("change",{bubbles:true}));}});
+  const bp=document.getElementById("becomePartner"); if(bp) bp.addEventListener("click",()=>{const r=document.getElementById("r6"); if(r){r.checked=true; r.dispatchEvent(new Event("change",{bubbles:true}));}});
+
+  /* tell vaylo why */
+  (function(){
+    const el=document.getElementById("whyScr"); if(!el) return;
+    const top='<div class="a-top"><b><svg class="vl" viewBox="'+document.querySelector("#vlogo").getAttribute("viewBox")+'"><use href="#vlogo"/></svg></b><span>Basement</span></div>';
+    const alert='<div class="w-card"><span class="t">Now · Basement floor</span><b>Water for 40 minutes</b><p>This usually means trouble here. Alarm in 10 minutes.</p><div class="w-count">Alarm in 10:00<i></i></div></div>';
+    const S=[
+      top+alert+'<div class="w-btn">I\'ve got this</div><div class="w-btn ghost">Turn water off</div>',
+      top+'<div class="w-card"><b>Got it. What\'s going on?</b><div class="w-chips"><span class="on">Filled a big barrel</span><span>Mopping</span><span>Spring flooding</span><span>Other…</span></div></div><div class="w-card"><b>For how long?</b><div class="w-chips sc"><span>Just now</span><span class="on">Today</span><span>Every spring</span><span>Always</span></div></div><div class="w-btn">Save</div>',
+      top+'<div class="w-ok"><i><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></i><b style="font:700 1.05rem var(--f-display);color:#13263A">Learned</b><p style="font-size:.82rem;color:#4E6273;line-height:1.4">No alarm today for the basement.<br>Back to normal rules tomorrow.</p></div><div class="w-card"><span class="t">Vaylo AI</span><p>Next time water shows up here with a full barrel nearby, I\'ll ask before I alarm.</p></div>'
+    ];
+    let i=0; const show=()=>{el.innerHTML='<div class="w-fade" style="display:grid;gap:12px">'+S[i]+'</div>'};
+    show();
+    if(!matchMedia("(prefers-reduced-motion: reduce)").matches){setInterval(()=>{i=(i+1)%S.length;show()},4200);}
+  })();
+
+  /* home SOS */
+  (function(){
+    const el=document.getElementById("sosScr"); if(!el) return;
+    const top='<div class="a-top"><b><svg class="vl" viewBox="'+document.querySelector("#vlogo").getAttribute("viewBox")+'"><use href="#vlogo"/></svg></b><span>Unit 4B</span></div>';
+    const S=[
+      top+'<div class="sosbtn">SOS<small>Home SOS</small></div><div class="w-card"><b>What\'s happening?</b><div class="w-chips"><span class="on">Water from the ceiling</span><span>Through the wall</span><span>Under my floor</span></div></div>',
+      top+'<div class="w-card"><b>Add a photo or video?</b><div class="w-vid"><svg viewBox="0 0 240 130" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9E2D6"/><stop offset="1" stop-color="#D8CEBF"/></linearGradient><radialGradient id="stain" cx=".5" cy="0" r=".7"><stop offset="0" stop-color="#8C7357" stop-opacity=".75"/><stop offset=".6" stop-color="#A88F72" stop-opacity=".35"/><stop offset="1" stop-color="#A88F72" stop-opacity="0"/></radialGradient></defs><rect width="240" height="130" fill="url(#wall)"/><rect width="240" height="22" fill="#F1ECE4"/><path d="M0 22H240" stroke="#CFC4B4" stroke-width="2"/><g transform="translate(118 22)"><ellipse class="v-stain" rx="46" ry="16" fill="url(#stain)"/><path class="v-drip" d="M0 0 C-2 6 2 6 0 12" stroke="#7FA6CF" stroke-width="3" fill="none" stroke-linecap="round"/><path class="v-drop d1" d="M0 0c-3 5-4 7-4 9a4 4 0 0 0 8 0c0-2-1-4-4-9z" fill="#5E95CF"/><path class="v-drop d2" d="M0 0c-3 5-4 7-4 9a4 4 0 0 0 8 0c0-2-1-4-4-9z" fill="#5E95CF"/><path class="v-drop d3" d="M0 0c-3 5-4 7-4 9a4 4 0 0 0 8 0c0-2-1-4-4-9z" fill="#5E95CF"/></g><ellipse cx="118" cy="118" rx="38" ry="5" fill="#9EBEDF" opacity=".55"/><ellipse class="v-rip" cx="118" cy="118" rx="10" ry="2" fill="none" stroke="#5E95CF" stroke-width="1.5"/><ellipse class="v-rip r2" cx="118" cy="118" rx="10" ry="2" fill="none" stroke="#5E95CF" stroke-width="1.5"/></svg><span class="rec"><i></i>0:04</span><span class="opt">Optional</span></div></div><div class="w-btn" style="background:#D24A33">Send SOS</div><div class="w-btn ghost">Skip photo</div>',
+      top+'<div class="w-card"><span class="t">Checking units around you</span><b>Found it: unit 5B above</b><p>Kitchen sink sensor wet. Nobody home.</p></div><div class="w-card" style="background:#EAF4EE"><b style="color:#2F7A55">Valve in 5B closed</b><p>Building manager and 5B owner notified. Your report and photo are attached.</p></div>'
+    ];
+    let i=0; const show=()=>{el.innerHTML='<div class="w-fade" style="display:grid;gap:12px">'+S[i]+'</div>'};
+    show();
+    if(!matchMedia("(prefers-reduced-motion: reduce)").matches){setInterval(()=>{i=(i+1)%S.length;show()},4200);}
+  })();
+  /* hero toast rotation */
+  const T=[["blue","Bathroom wet · 10 min","Bath time? Totally normal. We'll stay quiet."],["green","All dry this morning","12 sensors checked in. Have a great day."],["amber","Closet humidity 63%","AC switched to dry mode for a bit."],["green","Kitchen sink dry again","Thanks for checking. Learned."]];
+  const toast=document.querySelector(".toast");
+  if(toast&&!matchMedia("(prefers-reduced-motion: reduce)").matches){let ti=0;setInterval(()=>{ti=(ti+1)%T.length;toast.classList.add("out");setTimeout(()=>{const[c,b,sp]=T[ti];toast.querySelector("i").style.setProperty("--rc",RING[c]);toast.querySelector("b").textContent=b;toast.querySelector("span").textContent=sp;toast.classList.remove("out")},450)},5200);}
+
+  const R={
+    bath:{p:"A shower floor needs time to dry. Wet up to 45 minutes is normal. Still wet after an hour? Vaylo asks. No reply? Water off.",t:[["var(--blue)","Normal up to",45],["var(--amber)","Asks at",60],["var(--shut)","Closes at",90]]},
+    kitchen:{p:"Should never be wet. Not even a little. Vaylo asks right away and closes fast.",t:[["var(--amber)","Asks at",0],["var(--shut)","Closes at",5]]},
+    heater:{p:"Zero tolerance. Old heaters fail quietly, so Vaylo doesn't wait around.",t:[["var(--amber)","Alarm at",0],["var(--shut)","Closes at",2]]},
+    laundry:{p:"A splash during a cycle is fine. A puddle that sticks around isn't.",t:[["var(--blue)","Normal up to",5],["var(--amber)","Asks at",10],["var(--shut)","Closes at",20]]},
+    crawl:{p:"Watches humidity and cold too. Pipes about to freeze? Water off before they split.",t:[["var(--blue)","Humidity alert over",null,"75%"],["var(--shut)","Closes below",null,"36°F"]]}
+  };
+  const SENS={relaxed:1.5,balanced:1,strict:.6};
+  let curRoom="bath", sens="balanced";
+  const rb=[...document.querySelectorAll(".rooms button")], sb=[...document.querySelectorAll(".sens button")];
+  function fmtT(m){if(m===0)return "once";m=Math.max(1,Math.round(m));return m+" min"}
+  function room(k){curRoom=k;rb.forEach(b=>b.setAttribute("aria-pressed",b.dataset.r===k));sb.forEach(b=>b.setAttribute("aria-pressed",b.dataset.s===sens));
+    document.getElementById("ruleP").textContent=R[k].p;
+    const c=document.getElementById("ruleC");c.innerHTML="";R[k].t.forEach(([col,lab,m,fixed])=>{const s=document.createElement("span");s.className="chip";const i=document.createElement("i");i.style.background=col;
+      const txt=fixed?lab+" "+fixed:(m===0?lab.replace(" at","")+" right away":lab+" "+fmtT(m*SENS[sens]));s.append(i,txt);c.appendChild(s)});}
+  rb.forEach(b=>b.addEventListener("click",()=>room(b.dataset.r)));
+  sb.forEach(b=>b.addEventListener("click",()=>{sens=b.dataset.s;room(curRoom)}));
+  room("bath");
+
+  const special={"4B":"shut","5F":"ask","2D":"wetok","6A":"wetok","3G":"ask","1H":"off"};
+  const info={
+    "4B":{c:"hot",t:"2:14 AM",b:"4B · Valve closed",s:"Tub overflowed, no reply in 18 min. Unit closed, maintenance on the way. 3B below: dry."},
+    "5F":{t:"1:52 AM",b:"5F · Check humidity",s:"Bathroom at 81% for 3 hours. Fan switched on."},
+    "3G":{t:"Yesterday",b:"3G · Low battery",s:"Sensor at 9%. Swap scheduled."},
+    "2D":{t:"11:40 PM",b:"2D · Shower running",s:"Wet 22 min. Totally normal."},
+    "6A":{t:"11:05 PM",b:"6A · Laundry splash",s:"During a cycle. Normal."},
+    "1H":{t:"Since Mon",b:"1H · Paused",s:"Vacant unit."}
+  };
+  const floorsEl=document.getElementById("floors"), feed=document.getElementById("feed");
+  for(let f=6;f>=1;f--){const row=document.createElement("div");row.className="floor";const l=document.createElement("span");l.className="fl";l.textContent="FL "+f;row.appendChild(l);
+    for(const L of "ABCDEFGH"){const id=f+L,b=document.createElement("button");b.type="button";b.className="unit "+(special[id]||"");b.textContent=id;b.setAttribute("aria-pressed","false");b.setAttribute("aria-label","Unit "+id);
+      b.addEventListener("click",()=>{document.querySelectorAll(".unit").forEach(u=>u.setAttribute("aria-pressed",u===b));unit(id)});row.appendChild(b);}
+    floorsEl.appendChild(row);}
+  function ev(o){const d=document.createElement("div");d.className="ev"+(o.c?" "+o.c:"");d.innerHTML='<span class="t"></span><b></b><span></span>';d.children[0].textContent=o.t;d.children[1].textContent=o.b;d.children[2].textContent=o.s;return d}
+  function all(){feed.innerHTML="";["4B","5F","2D","3G"].forEach(k=>feed.appendChild(ev(info[k])));}
+  function unit(id){feed.innerHTML="";feed.appendChild(ev(info[id]||{t:"Now",b:id+" · All dry",s:"3 sensors online. Valve open. Self-test passed this morning."}));
+    const b=document.createElement("button");b.type="button";b.className="back";b.textContent="← All events";b.addEventListener("click",()=>{document.querySelectorAll(".unit").forEach(u=>u.setAttribute("aria-pressed","false"));all()});feed.appendChild(b);}
+  all();
+
+
+  /* ---------- Protection planner ---------- */
+  (function(){
+    const S={baths:2,kitchens:1,units:48,floors:6,ubaths:1,mech:2};
+    const LIM={baths:[1,20],kitchens:[1,5],units:[1,20000],floors:[1,120],ubaths:[1,6],mech:[0,200]};
+    let mode="home";
+    const $=id=>document.getElementById(id);
+    const COL={valve:"var(--ink)",combo:"var(--blue)",spot:"var(--sand-deep)",climate:"var(--dry)",hub:"var(--ink-2)",router:"var(--muted)",contact:"var(--amber)"};
+    const SKU={valve:"Smart Valve",combo:"Combo Sensor",spot:"Spot Sensor",climate:"Climate Sensor",hub:"Building Gateway",router:"Floor Router",contact:"Door & Window Sensor"};
+    const PRICE={combo:35,spot:29,climate:25,contact:25};
+    const fmt=n=>"$"+Math.round(n).toLocaleString("en-US");
+
+    function house(){
+      const items=[]; const add=(type,where,note)=>items.push({type,where,note:note||""});
+      const heater=$("s-heater").value, occ=$("s-occ").value, irr=$("t-irr").checked;
+      let size=$("s-main").value; if(size==="auto") size=S.baths>=4?'1"':'¾"';
+      add("valve","Main shutoff, "+size,"After the meter, before the first branch");
+      if(irr) add("valve","Irrigation line","Second zone, own schedule");
+      for(let i=1;i<=S.baths;i++){add("combo","Bathroom "+i+", shower or tub floor","Shower zone rule");add("spot","Bathroom "+i+", under vanity");}
+      for(let i=1;i<=S.kitchens;i++){const n=S.kitchens>1?" "+i:"";add("spot","Kitchen"+n+", under sink");add("spot","Kitchen"+n+", dishwasher");}
+      if($("t-ice").checked) add("spot","Behind fridge, ice maker line");
+      if($("t-laundry").checked) add("combo","Laundry, behind washer","Laundry rule");
+      if(heater!=="none") add(heater==="attic"?"combo":"spot","Water heater pan, "+heater, heater==="attic"?"Freeze and leak":"Zero tolerance");
+      if($("t-crawl").checked) add("combo","Crawlspace or basement, lowest point","Freeze and humidity");
+      if($("t-attic").checked) add("combo","Attic, along the pipes","Freeze and humidity");
+      if($("t-soft").checked) add("spot","Water softener or filter");
+      if(occ!=="full") add("climate","Living area, whole-home climate",occ==="seasonal"?"Vacation mode on by default":"Guest-proof rules");
+      else add("climate","Hallway, whole-home climate");
+      const humid=$("t-humid").checked;
+      if(humid){add("climate","Primary closet, mold watch","Keeps humidity under 60%");add("climate","Guest bedroom, mold watch");add("contact","Sliding door, AC pause");add("contact","Main window, AC pause");}
+      // risk
+      let r=S.baths+(heater==="attic"?3:heater==="closet"?1:0)+($("t-attic").checked?2:0)+($("t-crawl").checked?1:0)+(occ==="seasonal"?3:occ==="rental"?2:0)+($("t-ice").checked?1:0)+(irr?1:0)+($("t-soft").checked?1:0)+(humid?2:0)+(humid&&occ!=="full"?2:0);
+      // price
+      const big=size==='1¼"'||size==='1½"';
+      const kit=irr?{name:"Zoned Kit",price:449,combo:4,climate:2,valves:2}:size==='1"'?{name:'Home Kit 1"',price:379,combo:3,climate:1,valves:1}:{name:'Home Kit ¾"',price:349,combo:3,climate:1,valves:1};
+      const c=k=>items.filter(i=>i.type===k).length;
+      const extra=Math.max(0,c("combo")-kit.combo)*PRICE.combo+Math.max(0,c("climate")-kit.climate)*PRICE.climate+c("spot")*PRICE.spot+c("contact")*PRICE.contact;
+      return {items,risk:r,riskMax:16,price:big?null:kit.price+extra,priceLabel:"Hardware estimate",
+        note:(big?"Main line over 1\": we'll quote the large valve. ":"")+(humid?"Links to your AC or dehumidifier through your smart thermostat. ":"")+"Based on "+kit.name+" plus "+(extra?fmt(extra)+" in extra sensors.":"no extras."),
+        title:mode==="pro"?($("p-proj").value||"Pro project"):"My home"};
+    }
+    function building(){
+      const items=[]; const U=S.units;
+      const perUnit=[["valve","Unit valve ½\"","Isolates one apartment"],["combo","Bathroom floor ×"+S.ubaths,"Per unit"],["spot","Kitchen sink","Per unit"]];
+      if($("b-dish").checked) perUnit.push(["spot","Dishwasher","Per unit"]);
+      if($("b-laundry").checked) perUnit.push(["combo","Washer","Per unit"]);
+      perUnit.forEach(([t,w,n])=>items.push({type:t,where:w,note:n,qty:t==="combo"&&w.startsWith("Bathroom")?U*S.ubaths:U}));
+      items.push({type:"hub",where:"Building Gateway",note:"LTE or building network",qty:1});
+      items.push({type:"router",where:"Floor routers",note:"One per floor",qty:S.floors});
+      if(S.mech) {items.push({type:"combo",where:"Mechanical rooms, floor",note:"2 per room",qty:S.mech*2});items.push({type:"climate",where:"Mechanical rooms, climate",note:"1 per room",qty:S.mech});}
+      const extraBath=(S.ubaths-1)*PRICE.combo+($("b-laundry").checked?PRICE.combo:0)+($("b-dish").checked?PRICE.spot:0);
+      const lo=U*(136+extraBath)+250+S.floors*39+S.mech*(2*PRICE.combo+PRICE.climate), hi=U*(166+extraBath)+250+S.floors*39+S.mech*(2*PRICE.combo+PRICE.climate);
+      const r=Math.min(16,4+Math.round(U/30)+S.floors+(S.ubaths>1?2:0)+($("b-student").checked?4:0));
+      return {items,risk:r,riskMax:16,range:[lo,hi],priceLabel:"Installed estimate",
+        note:"Per-door pricing, installed. Portal and monitoring "+fmt(3)+"–"+fmt(5)+" per door per month."+($("b-student").checked?" Student mode: stricter tub and shower rules.":""),
+        title:$("b-proj").value||"Building"};
+    }
+    let last=null;
+    function render(){
+      const d=mode==="bld"?building():house(); last=d;
+      const lvl=d.risk/d.riskMax, cls=lvl<.4?"low":lvl<.7?"med":"high";
+      $("r-risk").textContent=cls==="low"?"Low":cls==="med"?"Medium":"High"; $("r-risk").className="risk "+cls;
+      $("r-meter").style.width=Math.max(8,Math.min(100,lvl*100))+"%";
+      $("r-pricelabel").textContent=d.priceLabel;
+      $("r-price").textContent=d.range?fmt(d.range[0])+"–"+fmt(d.range[1]):(d.price==null?"Quote":fmt(d.price));
+      const counts={}; d.items.forEach(i=>counts[i.type]=(counts[i.type]||0)+(i.qty||1));
+      $("r-counts").innerHTML=""; Object.entries(counts).forEach(([k,v])=>{const s=document.createElement("span");s.textContent=v.toLocaleString("en-US")+" × "+SKU[k]+(v>1&&k!=="hub"?"s":"");$("r-counts").appendChild(s)});
+      const ol=$("r-list"); ol.innerHTML="";
+      d.items.forEach(i=>{const li=document.createElement("li");const dot=document.createElement("i");dot.style.background=COL[i.type];
+        const a=document.createElement("span");a.textContent=(i.qty?i.qty.toLocaleString("en-US")+" × ":"")+i.where;const b=document.createElement("span");b.textContent=SKU[i.type];li.append(dot,a,b);ol.appendChild(li)});
+      $("r-note").textContent=d.note; $("p-msg").textContent="";
+    }
+    document.querySelectorAll(".stp2 button").forEach(b=>b.addEventListener("click",()=>{const k=b.dataset.k;S[k]=Math.min(LIM[k][1],Math.max(LIM[k][0],S[k]+Number(b.dataset.d)));$("o-"+k).value=S[k];render()}));
+    document.querySelectorAll(".num").forEach(inp=>{const k=inp.dataset.k;
+      inp.addEventListener("input",()=>{const v=parseInt(inp.value,10);if(!isNaN(v))S[k]=Math.min(LIM[k][1],Math.max(LIM[k][0],v));});
+      inp.addEventListener("change",()=>{inp.value=S[k];render()});
+      inp.addEventListener("focus",()=>inp.select());});
+    document.getElementById("pin").addEventListener("input",render);
+    document.getElementById("pin").addEventListener("change",render);
+    const tabs=[...document.querySelectorAll(".ptabs button")];
+    tabs.forEach(t=>t.addEventListener("click",()=>{mode=t.dataset.m;tabs.forEach(x=>{x.setAttribute("aria-selected",x===t);x.tabIndex=x===t?0:-1});
+      document.querySelector(".only-house").hidden=mode==="bld";document.querySelector(".only-bld").hidden=mode!=="bld";document.querySelector(".only-pro").hidden=mode!=="pro";render()}));
+
+    function rows(){return last.items.map(i=>[i.qty||1,SKU[i.type],i.where,i.note])}
+    function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+    function specText(){
+      const d=last, date=new Date().toISOString().slice(0,10);
+      const L=[];
+      L.push("WATER LEAK PROTECTION — EQUIPMENT & PERFORMANCE SPECIFICATION","Project: "+d.title,"Prepared: "+date+" with the Vaylo Protection Planner (preliminary)","");
+      L.push("1. SCOPE","Furnish, install and commission an automatic water leak detection and shutoff system with wireless sensors, motorized shutoff valve(s), local control unit and remote alerts.","");
+      L.push("2. EQUIPMENT SCHEDULE"); rows().forEach(r=>L.push("  "+r[0]+" × "+r[1]+" — "+r[2]+(r[3]?" ("+r[3]+")":""))); L.push("");
+      L.push("3. PERFORMANCE REQUIREMENTS",
+        "  a. Automatic shutoff per zone rules; detection and shutoff run locally without internet.",
+        "  b. Battery backup able to close valve(s) during a power outage.",
+        "  c. Valve: stainless steel SS304, full port, lead-free; NSF/ANSI 61/372 listing targeted; manual override; positive position feedback; NPT.",
+        "  d. Sensors: wireless (Thread/Matter), battery powered, daily self-test; water plus temperature/humidity where specified.",
+        "  e. Alerts: app push, SMS, email and voice assistants (Alexa, Google Home, Apple Home, SmartThings via Matter); backup contacts; escalation before shutoff.",
+        mode==="bld"?"  f. Per-unit isolation, building portal with audit log, work-order export.":"  f. Freeze protection with automatic shutoff below set temperature.",
+        "  g. Humidity monitoring per room with mold-risk alerts; AC or dehumidifier control via Matter thermostat where specified.",
+        "  i. Home SOS: residents report leaks from neighboring units (optional photo); system checks adjacent units and notifies management.",
+        "  h. User can pause an escalation with a reason and duration (now, today, seasonal, always); reasons train zone rules.","");
+      L.push("4. INSTALLATION & COMMISSIONING","  Install per manufacturer instructions. Test every sensor and valve. Set zone rules. Train owner or manager.","");
+      L.push("5. DOCUMENTATION DELIVERABLES","  Commissioning report · Sensor location map · As-built equipment list · Warranty · Insurance certificate (PDF).","");
+      L.push("6. BUDGET","  "+d.priceLabel+": "+(d.range?fmt(d.range[0])+"–"+fmt(d.range[1]):d.price==null?"Quote required":fmt(d.price))+" (target pricing, excl. tax).","");
+      L.push("Note: Preliminary concept specification. Certifications in progress. Vaylo is made by Gorilla Forge.");
+      return L.join("\n");
+    }
+    function specHtml(){
+      const d=last;
+      const tr=rows().map(r=>"<tr><td>"+r[0]+"</td><td>"+esc(r[1])+"</td><td>"+esc(r[2])+"</td><td>"+esc(r[3])+"</td></tr>").join("");
+      const body=specText().split("\n\n").slice(3).join("\n\n");
+      return '<!doctype html><html><head><meta charset="utf-8"><title>Vaylo spec – '+esc(d.title)+'</title><style>body{font-family:Arial,sans-serif;color:#11202B;max-width:780px;margin:40px auto;line-height:1.5}h1{font-size:22px}h2{font-size:15px;margin-top:26px;text-transform:uppercase;letter-spacing:.06em}table{border-collapse:collapse;width:100%;font-size:13px}td,th{border:1px solid #ccc;padding:6px 8px;text-align:left}th{background:#F3F1EC}pre{white-space:pre-wrap;font-family:inherit}.m{color:#4F6475;font-size:13px}</style></head><body>'
+        +'<p class="m">VAYLO · Water peace of mind</p><h1>Water Leak Protection — Equipment &amp; Performance Specification</h1>'
+        +'<p class="m">Project: <b>'+esc(d.title)+'</b> · Prepared '+new Date().toISOString().slice(0,10)+' · Preliminary</p>'
+        +'<h2>Equipment schedule</h2><table><tr><th>Qty</th><th>Product</th><th>Location</th><th>Rule / note</th></tr>'+tr+'</table>'
+        +'<pre>'+esc(body.replace(/^2\. EQUIPMENT SCHEDULE[\s\S]*?\n\n/m,""))+'</pre></body></html>';
+    }
+    function csv(){return "Qty,Product,Location,Note\n"+rows().map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\n")}
+    async function save(filename,data){
+      const m=$("p-msg"); m.textContent="";
+      try{const type=filename.endsWith(".csv")?"text/csv":"text/html";const u=URL.createObjectURL(new Blob([data],{type:type+";charset=utf-8"}));const a=document.createElement("a");a.href=u;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);m.textContent="Downloaded.";}catch(e){m.textContent="Couldn't save the file. Use Copy spec instead.";}
+    }
+    const slug=()=>(last.title||"vaylo").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,40)||"vaylo";
+    $("dl-spec").addEventListener("click",()=>save("vaylo-spec-"+slug()+".html",specHtml()));
+    $("dl-csv").addEventListener("click",()=>save("vaylo-equipment-"+slug()+".csv",csv()));
+    $("cp-spec").addEventListener("click",()=>{const t=specText();
+      navigator.clipboard.writeText(t).then(()=>{$("p-msg").textContent="Spec copied. Paste it into your bid."}).catch(()=>{$("p-msg").textContent="Copy isn't allowed here. Use Download bid spec."})});
+    render();
+  })();
+
+  const form=document.getElementById("resForm"), m=document.getElementById("formMsg"), btn=document.getElementById("submitBtn");
+  form.addEventListener("submit",async e=>{
+    e.preventDefault(); m.textContent="";
+    const fd=new FormData(form), name=(fd.get("name")||"").trim(), email=(fd.get("email")||"").trim(), message=(fd.get("message")||"").trim();
+    if(!name){m.textContent="What should we call you?";document.getElementById("f-name").focus();return}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){m.textContent="That email looks off. Try name@example.com.";document.getElementById("f-email").focus();return}
+    if(!document.getElementById("f-ok").checked){m.textContent="Tick the box so we're allowed to email you.";return}
+    const rec={role:fd.get("role"),name,email,zip:(fd.get("zip")||"").trim(),org:(fd.get("org")||"").trim(),message,website:(fd.get("website")||""),consent:true,page:location.pathname+location.search};
+    btn.disabled=true;btn.textContent="Saving…";
+    try{
+      const r=await fetch("/api/lead",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(rec)});
+      if(!r.ok) throw new Error("http "+r.status);
+      form.innerHTML='<div class="done"><p class="kicker">You\'re in</p><h3></h3><p></p></div>';
+      form.querySelector("h3").textContent="Thanks, "+name.split(" ")[0]+".";
+      form.querySelector(".done p:last-child").textContent=rec.role==="Homeowner"?"We'll email you before the first units ship.":"We'll get back to you personally within a few days.";
+    }catch(err){btn.disabled=false;btn.textContent="Save my spot";m.textContent="Couldn't send just now. Try again, or email hello@getvaylo.io."}
+  });
+})();
+</script>
+
+<script>
+(function(){
+var root=document.getElementById('clm');if(!root)return;
+var C=[["Oslo · Aspen","−4°F · dry, freezing"],["Toronto","14°F · snow, freeze-thaw"],["New York","41°F · four seasons"],["Houston","82°F · hot and humid"],["Miami","90°F · tropical, 80% humidity"]];
+var F=[["Leak stop","#2A73C9",95,95,95,95,95],["Freeze guard","#5FA3F0",100,95,70,25,10],["Mold guard","#D99A14",25,30,50,85,100],["AC by humidity","#D99A14",0,10,40,80,100],["Away mode","#2A73C9",90,70,50,70,95]];
+var rows=document.getElementById('clmRows'),B=[],W=[];
+F.forEach(function(f){var d=document.createElement('div');d.className='clm-r';d.innerHTML='<b>'+f[0]+'</b><div class="t"><div class="b" style="background:'+f[1]+'"></div></div><span></span>';rows.appendChild(d);B.push(d.querySelector('.b'));W.push(d.querySelector('span'))});
+var fx=document.getElementById('clmFx'),fl=[];
+for(var k=0;k<22;k++){var e=document.createElement('i');e.style.left=(Math.random()*98)+'%';var s=3+Math.random()*6;e.style.width=e.style.height=s+'px';e.style.animationDuration=(5+Math.random()*5)+'s';e.style.animationDelay=(-Math.random()*8)+'s';fx.appendChild(e);fl.push(e)}
+function mix(a,b,t){var o='#';for(var i=0;i<3;i++){var x=parseInt(a.substr(1+i*2,2),16),y=parseInt(b.substr(1+i*2,2),16);o+=('0'+Math.round(x+(y-x)*t).toString(16)).slice(-2)}return o}
+function word(v){return v>=85?'Critical':v>=60?'High':v>=35?'Useful':'Low'}
+function $(i){return document.getElementById(i)}
+function set(t){var x=t*4,i=Math.min(3,Math.floor(x)),u=x-i,n=Math.round(x);
+root.style.background=mix('#EEF4FA','#F7EEE2',t);
+$('clmS1').setAttribute('stop-color',mix('#DCE9F6','#FBE3B8',t));$('clmS2').setAttribute('stop-color',mix('#F4F8FC','#FFF6E8',t));
+$('clmSun').setAttribute('opacity',Math.max(0,(t-.35)/.65));
+var cold=Math.max(0,1-t/.55);$('clmCap').setAttribute('opacity',cold);$('clmSnowG').setAttribute('opacity',cold);
+$('clmGround').setAttribute('fill',mix('#C9C3B6','#A7B46E',t));fl.forEach(function(e){e.style.opacity=cold});
+F.forEach(function(f,j){var v=f[2+i]+(f[3+i]-f[2+i])*u;B[j].style.width=v+'%';W[j].textContent=word(v)});
+$('clmCity').textContent=C[n][0];$('clmMeta').textContent=C[n][1];
+$('clmCapT').textContent=t<.5?'Main shutoff outside? Insulated, frost-safe cover.':'Main shutoff outside? UV- and storm-proof cover.'}
+var r=$('clmRange'),auto=true,t0=null,raf;
+r.addEventListener('input',function(){auto=false;set(r.value/1000)});
+['pointerdown','keydown','touchstart'].forEach(function(ev){r.addEventListener(ev,function(){auto=false},{passive:true})});
+set(r.value/1000);
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function loop(now){if(!auto)return;if(t0===null)t0=now;var p=((now-t0)/1000)%28/28;var t=.5-.5*Math.cos(p*2*Math.PI+1.05);r.value=Math.round(t*1000);set(t);raf=requestAnimationFrame(loop)}
+if(!reduce&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&auto){cancelAnimationFrame(raf);raf=requestAnimationFrame(loop)}else cancelAnimationFrame(raf)})},{threshold:.3}).observe(root)}
+})();
+</script>
+
+</body></html>
