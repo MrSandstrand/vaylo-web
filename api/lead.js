@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
     org: clip(b.org, 160) || null,
     message: clip(b.message, 4000) || null,
     consent: b.consent === true,
-    source: "getvaylo.io",
+    source: clip(b.source, 200) || "direct",
     page: clip(b.page, 300) || null,
   };
   if (!lead.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email) || !lead.consent) {
@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
 
   // Optional e-mail notification (set RESEND_API_KEY, NOTIFY_TO, NOTIFY_FROM in Vercel).
   if (process.env.RESEND_API_KEY && process.env.NOTIFY_TO) {
-    const rows = [["Role", lead.role], ["Name", lead.name], ["Email", lead.email], ["ZIP", lead.zip], ["Company", lead.org], ["Message", lead.message]]
+    const rows = [["Role", lead.role], ["Name", lead.name], ["Email", lead.email], ["ZIP", lead.zip], ["Company", lead.org], ["Message", lead.message], ["Source", lead.source]]
       .filter(r => r[1]).map(r => `<tr><td style="padding:4px 12px 4px 0;color:#4E6273">${r[0]}</td><td style="padding:4px 0">${esc(r[1])}</td></tr>`).join("");
     try {
       await fetch("https://api.resend.com/emails", {
